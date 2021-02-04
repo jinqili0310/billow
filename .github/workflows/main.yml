@@ -1,0 +1,15 @@
+name: Delete Deployments
+
+on:
+  delete:
+    branches-ignore:
+      - main
+
+  jobs:
+    delete:
+      runs-on: ubuntu-latest
+      steps:
+        - uses: strumwolf/delete-deployment-environment@1.1.0
+          with:
+            token: ${{ github.token }}
+            environment: github-pages, damp-gorge-90511
