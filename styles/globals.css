@@ -1,16 +1,140 @@
 html,
 body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+	padding: 0;
+	margin: 0;
+	font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans,
+		Helvetica Neue, sans-serif;
+	color: #707070;
+	font-size: 14px;
+	width: 100%;
 }
 
 a {
-  color: inherit;
-  text-decoration: none;
+	color: inherit;
+	text-decoration: none;
 }
 
 * {
-  box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+:focus {
+	outline: none;
+}
+
+/* pageHeader.js */
+div.page-header {
+	width: 100%;
+	background-color: #fff;
+	height: 65px;
+	display: block;
+	padding: 5px 0;
+}
+.menu-icon {
+	font-size: 24px;
+	padding: 0 0 0 10px;
+	margin: 0 10px 0 0;
+	vertical-align: 0.1em;
+}
+h1.company {
+	font-size: 40px;
+	display: inline-block;
+	color: transparent;
+	background-clip: text;
+	-webkit-background-clip: text;
+	background-repeat: repeat;
+	background-image: linear-gradient(to right, #2575f4, #33cc99);
+	background-image: -webkit-linear-gradient(left, #2575f4, #33cc99);
+	font-family: lobster;
+	margin: 0;
+}
+a.link {
+	color: #000;
+	text-decoration: underline;
+	margin: 1.5em 1em 0 0;
+	float: right;
+}
+div.placeholder {
+	display: none;
+}
+
+/* headMenu.js */
+div.head-menu {
+	width: 70vw;
+	display: block;
+	border-radius: 0 20px 20px 0;
+	border-color: transparent;
+	box-shadow: 2px 2px 0.02px rgba(0, 0, 0, 0.1);
+	z-index: 99;
+	position: relative;
+	height: 50vh;
+	margin: 0;
+	padding: 0;
+	background-color: #fff;
+}
+div.menu-top {
+	display: block;
+	height: 70%;
+	padding: 10px;
+}
+.ant-pagination.ant-table-pagination.ant-table-pagination-right {
+	display: none;
+}
+.menu-table thead.ant-table-thead {
+	display: none;
+}
+.menu-table td.ant-table-cell:nth-child(odd) {
+	text-align: end;
+}
+.menu-table td.ant-table-cell:nth-child(even) {
+	font-size: 24px;
+	font-weight: semibold;
+	text-decoration: underline;
+	color: #707070;
+	padding-bottom: 2px;
+}
+.menu-table a {
+	color: #707070;
+}
+.menu-table .ant-table-tbody > tr > td {
+	border: none;
+}
+div.menu-bottom {
+	float: left;
+	margin: 0 0 20px 20px;
+	position: absolute;
+	bottom: 10px;
+}
+a.menu-bottom-link {
+	display: block;
+	color: #707070;
+	padding: 0 0 10px 5px;
+}
+.custom-icon {
+	display: inline-block;
+	background-color: #fff;
+	font-size: 60px;
+	padding: 5px 10px 0 5px;
+}
+/* #huwai {
+	font-size: 44px;
+	padding-left: 12px;
+} */
+
+/* homeCarousel.js */
+h3.carousel-text {
+	height: 180px;
+	color: #fff;
+	line-height: 180px;
+	text-align: center;
+}
+div.slick-track {
+	width: 100% !important;
+	height: 20px;
+}
+div.ant-carousel {
+	background-color: #d9d9d9;
+	margin: 5px;
+	border-radius: 5px;
+	box-shadow: 1px 1px 0.02px rgba(0, 0, 0, 0.1);
 }
