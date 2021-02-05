@@ -2,7 +2,7 @@
  * @Author: Jinqi Li
  * @Date: 2021-02-03 21:53:11
  * @LastEditors: Jinqi Li
- * @LastEditTime: 2021-02-04 13:38:59
+ * @LastEditTime: 2021-02-05 12:06:55
  * @FilePath: \billow\components\headMenu.js
  */
 import React from 'react';
@@ -29,7 +29,7 @@ export default function HeadMenu() {
 	const openWindow = () => {
 		console.log('privacy policy');
 	};
-	
+
 	const dataSrc = [
 		{
 			key: 1,
@@ -50,6 +50,14 @@ export default function HeadMenu() {
 			key: 4,
 			iconSrc: <Icon component={Huwai} className="custom-icon" />,
 			area: <a href="/outdoor">户外</a>
+		},
+		{
+			key: 5,
+			area: <a href="/photography">摄影</a>
+		},
+		{
+			key: 6,
+			area: <a href="/show">戏精才艺展示</a>
 		}
 	];
 

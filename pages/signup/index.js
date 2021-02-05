@@ -2,7 +2,7 @@
  * @Author: Jinqi Li
  * @Date: 2021-02-04 01:10:27
  * @LastEditors: Jinqi Li
- * @LastEditTime: 2021-02-04 16:59:51
+ * @LastEditTime: 2021-02-05 10:46:44
  * @FilePath: \billow\pages\signup\index.js
  */
 import React, { useState } from 'react';
@@ -10,6 +10,8 @@ import 'antd/dist/antd.css';
 import { Form, Input, Tooltip, Select, Checkbox, Button, Modal } from 'antd';
 import { QuestionCircleOutlined } from '@ant-design/icons';
 import PageHeader from '../../components/pageHeader';
+
+const { displayRender } = Input;
 
 export default function Signup() {
 	// form

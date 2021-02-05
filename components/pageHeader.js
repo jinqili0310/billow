@@ -2,19 +2,20 @@
  * @Author: Jinqi Li
  * @Date: 2021-02-03 21:50:21
  * @LastEditors: Jinqi Li
- * @LastEditTime: 2021-02-04 20:28:34
- * @FilePath: /billow-website/components/pageHeader.js
+ * @LastEditTime: 2021-02-05 11:46:13
+ * @FilePath: \billow\components\pageHeader.js
  */
 import React, { useState } from 'react';
 import 'antd/dist/antd.css';
+import Image from 'next/image';
 import HeadMenu from './headMenu';
 import { MenuOutlined } from '@ant-design/icons';
 import { Affix } from 'antd';
 
 export default function PageHeader() {
 	const [ menuOpen, setMenuOpen ] = useState(false);
-  const [isOpen, setIsOpen] = useState(false);
-  const [top, setTop] = useState(10);
+	const [ isOpen, setIsOpen ] = useState(false);
+	const [ top, setTop ] = useState(10);
 
 	const openMenu = (e) => {
 		e.preventDefault();
@@ -25,22 +26,25 @@ export default function PageHeader() {
 			setMenuOpen(true);
 			setIsOpen(true);
 		}
-    };
-    
-    return (
-    <Affix offsetTop={top} className="page-header">
-      <MenuOutlined className="menu-icon" onClick={openMenu} />
-      <a href="/">
-        <h1 className="company">Billow</h1>
-      </a>
-      <a href="/signup" className="link">
-        Signup
-      </a>
-      <a href="/login" className="link">
-        Login
-      </a>
+	};
 
-      {menuOpen ? <HeadMenu /> : <div className="placeholder" />}
-    </Affix>
-  );
+	return (
+		<Affix offsetTop={top} className="page-header">
+			<MenuOutlined className="menu-icon" onClick={openMenu} />
+			<a href="/">
+				<Image src="/logo.png" alt="billow" width="30" height="30" />
+			</a>
+			<a href="/">
+				<h1 className="company">Billow</h1>
+			</a>
+			<a href="/signup" className="link">
+				Signup
+			</a>
+			<a href="/login" className="link">
+				Login
+			</a>
+
+			{menuOpen ? <HeadMenu /> : <div className="placeholder" />}
+		</Affix>
+	);
 }

@@ -2,8 +2,8 @@
  * @Author: Jinqi Li
  * @Date: 2021-02-04 13:27:46
  * @LastEditors: Jinqi Li
- * @LastEditTime: 2021-02-05 02:25:30
- * @FilePath: /billow-website/components/homeCard.js
+ * @LastEditTime: 2021-02-05 10:52:04
+ * @FilePath: \billow\components\homeCard.js
  */
 import React from 'react';
 import 'antd/dist/antd.css';
@@ -12,12 +12,9 @@ import { EditOutlined, EllipsisOutlined, SettingOutlined } from '@ant-design/ico
 
 export default function HomeCard(props) {
 	const { Meta } = Card;
-    return (
-		<Card
-			style={{ width: 240 }}
-			cover={props.cover}
-		>
-			<Meta avatar={<Avatar src={props.avatar} />} title={props.cardTitle} description={props.cardDescription} />
+	return (
+		<Card style={{ width: 240 }} cover={props.cover} title={props.cardTitle} extra={<a href="/posts/1">Detail</a>}>
+			<Meta avatar={<Avatar src={props.avatar} />} description={props.cardDescription} />
 		</Card>
 	);
 }

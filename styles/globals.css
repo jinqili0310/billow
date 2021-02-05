@@ -41,7 +41,7 @@ a {
 	font-size: 24px;
 	padding: 0 0 0 10px;
 	margin: 0 10px 0 0;
-	vertical-align: 0.1em;
+	vertical-align: 0 !important;
 }
 h1.company {
 	font-size: 40px;
@@ -53,7 +53,7 @@ h1.company {
 	background-image: linear-gradient(to right, #2575f4, #33cc99);
 	background-image: -webkit-linear-gradient(left, #2575f4, #33cc99);
 	font-family: "Lobster", cursive;
-	margin: 0;
+	margin: 0 0 0 5px;
 }
 a.link {
 	color: #000;
@@ -105,6 +105,7 @@ div.menu-top {
 }
 .menu-table a {
 	color: #707070;
+	font-weight: semibold;
 }
 .menu-table .ant-table-tbody > tr > td {
 	border: none;
@@ -151,6 +152,11 @@ div.ant-carousel {
 /* homeArea.js */
 div.home-cards {
 	margin: 0 5px 10px 5px;
+}
+h3.card-title > a {
+	color: #707070 !important;
+	text-decoration: underline;
+	font-weight: bold;
 }
 
 /* signup/index.js */

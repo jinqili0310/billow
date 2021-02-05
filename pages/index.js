@@ -2,8 +2,8 @@
  * @Author: Jinqi Li
  * @Date: 1985-10-26 01:15:00
  * @LastEditors: Jinqi Li
- * @LastEditTime: 2021-02-05 02:34:19
- * @FilePath: /billow-website/pages/index.js
+ * @LastEditTime: 2021-02-05 12:13:50
+ * @FilePath: \billow\pages\index.js
  */
 import React from 'react';
 import 'antd/dist/antd.css';
@@ -19,7 +19,7 @@ export default function Home() {
 		<div>
 			<Head>
 				<title>Billow</title>
-				<link rel="icon" href="/billow.ico" />
+				<link rel="icon" href="/logo.ico" />
 			</Head>
 			<PageHeader />
 			<main className={styles.container}>
