@@ -2,8 +2,8 @@
  * @Author: Jinqi Li
  * @Date: 2021-02-04 13:27:46
  * @LastEditors: Jinqi Li
- * @LastEditTime: 2021-02-04 15:13:26
- * @FilePath: \billow\components\homeCard.js
+ * @LastEditTime: 2021-02-05 02:25:30
+ * @FilePath: /billow-website/components/homeCard.js
  */
 import React from 'react';
 import 'antd/dist/antd.css';
@@ -16,11 +16,6 @@ export default function HomeCard(props) {
 		<Card
 			style={{ width: 240 }}
 			cover={props.cover}
-			actions={[
-				<SettingOutlined key="setting" />,
-				<EditOutlined key="edit" />,
-				<EllipsisOutlined key="ellipsis" />
-			]}
 		>
 			<Meta avatar={<Avatar src={props.avatar} />} title={props.cardTitle} description={props.cardDescription} />
 		</Card>

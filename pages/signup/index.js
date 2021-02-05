@@ -9,6 +9,7 @@ import React, { useState } from 'react';
 import 'antd/dist/antd.css';
 import { Form, Input, Tooltip, Select, Checkbox, Button, Modal } from 'antd';
 import { QuestionCircleOutlined } from '@ant-design/icons';
+import PageHeader from '../../components/pageHeader';
 
 export default function Signup() {
 	// form
@@ -82,6 +83,8 @@ export default function Signup() {
 	};
 
 	return (
+		<React.Fragment>
+			<PageHeader />
 		<Form
 			{...formItemLayout}
 			form={form}
@@ -171,7 +174,7 @@ export default function Signup() {
 
 			<Form.Item
 				name="location"
-				label="Location (精确到city)"
+				label="Location"
 				rules={[
 					{
 						required: true,
@@ -238,7 +241,7 @@ export default function Signup() {
 			>
 				<Checkbox checked={checked} onChange={onChangeCheck}>
 					I have read the
-					<Button onClick={showModal} style={{ marginLeft: '0.5em', textDecoration: 'underline' }}>
+					<Button onClick={showModal}>
 						agreement
 					</Button>
 				</Checkbox>
@@ -258,5 +261,6 @@ export default function Signup() {
 				</Button>
 			</Form.Item>
 		</Form>
+		</React.Fragment>
 	);
 }

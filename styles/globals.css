@@ -25,12 +25,17 @@ a {
 }
 
 /* pageHeader.js */
-div.page-header {
+.page-header {
 	width: 100%;
 	background-color: #fff;
 	height: 65px;
 	display: block;
-	padding: 5px 0;
+	padding: 0;
+	overflow: hidden;
+}
+.ant-affix {
+	top: 0 !important;
+	background-color: #fff;
 }
 .menu-icon {
 	font-size: 24px;
@@ -151,11 +156,63 @@ div.home-cards {
 /* signup/index.js */
 form#register {
 	width: 80%;
-	margin: 10px auto;
+	margin: 20px auto;
 }
 div.ant-modal-footer > button.ant-btn {
 	display: none;
 }
 span.ant-modal-close-x {
 	display: none;
+}
+
+/* areaIntro.js */
+div.intro-div {
+	height: 60px;
+	width: 100%;
+	text-align: center;
+	justify-content: center;
+	background-color: #fff;
+}
+h1.intro-title {
+	color: #707070;
+	font-weight: semibold;
+	font-size: 24px;
+	display: inline-block;
+	margin: 0 0 0 20px;
+	padding: 0;
+}
+
+/* postList.js */
+.ReactVirtualized__Grid__innerScrollContainer {
+	height: auto !important;
+	max-height: auto !important;
+}
+
+/* posts/1.js */
+div.post-content {
+	div.ant-card.ant-card-bordered:nth-child(2) {
+		margin: 10px auto 10px auto;
+	}
+}
+.ant-card-meta-title {
+	white-space: normal !important;
+	overflow: visible !important;
+}
+.ant-list-split .ant-list-header {
+	margin: 0 5px;
+}
+
+/* login/index.js */
+.ant-form.ant-form-horizontal.login-form {
+	width: 80%;
+	margin: 20px auto;
+}
+.login-form-forgot {
+	float: right;
+}
+.ant-col-rtl .login-form-forgot {
+	float: left;
+}
+.login-form-button {
+	width: 100%;
 }

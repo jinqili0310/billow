@@ -2,11 +2,11 @@
  * @Author: Jinqi Li
  * @Date: 2021-02-03 22:18:56
  * @LastEditors: Jinqi Li
- * @LastEditTime: 2021-02-03 22:21:32
+ * @LastEditTime: 2021-02-05 02:12:03
  * @FilePath: /billow-website/next.config.js
  */
 module.exports = {
-	webpack: (config, options) => {
+	webpack: (config, { dev }) => {
 		config.module.rules.push({
 			test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
 			use: [

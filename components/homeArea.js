@@ -11,7 +11,7 @@ import HomeCard from './homeCard';
 export default function HomeArea(props) {
 	return (
 		<div className="home-cards">
-			<h3 className="card-title">{props.title}</h3>
+			<h3 className="card-title"><a href={props.link}>{props.title}</a></h3>
 
             {/* TODO
             map cards */}
