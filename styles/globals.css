@@ -123,7 +123,7 @@ a.menu-bottom-link {
 .custom-icon {
 	display: inline-block;
 	background-color: #fff;
-	font-size: 42px;
+	font-size: 50px;
 	padding: 5px 5px 0 0;
 }
 /* #huwai {
@@ -137,16 +137,18 @@ h3.carousel-text {
 	color: #fff;
 	line-height: 180px;
 	text-align: center;
-}
-div.slick-track {
-	width: 100% !important;
-	height: 20px;
+	background-color: #d9d9d9;
+	margin: 0;
 }
 div.ant-carousel {
 	background-color: #d9d9d9;
 	margin: 5px 5px 15px 5px;
 	border-radius: 5px;
 	box-shadow: 1px 1px 0.02px rgba(0, 0, 0, 0.1);
+}
+img.carousel-img {
+	height: 180px;
+	width: 100%;
 }
 
 /* homeArea.js */
@@ -221,4 +223,29 @@ div.post-content {
 }
 .login-form-button {
 	width: 100%;
+}
+
+/* homeCard.js */
+.home-card {
+	width: 100%;
+}
+
+/* pageFooter.js */
+div.footer-div{
+	text-align:center;
+	background: linear-gradient(-60deg, #33cc99,#2575f4);
+	padding: 15px;
+}
+.footer-logo {
+	font-size: 40px;
+	margin-bottom: 10px;
+}
+.footer-wechat {
+	font-size: 30px;
+}
+.footer-red{
+	font-size: 40px;
+}
+h3.footer-follow{
+	color: #fff;
 }

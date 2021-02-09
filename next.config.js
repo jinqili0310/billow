@@ -2,8 +2,8 @@
  * @Author: Jinqi Li
  * @Date: 2021-02-03 22:18:56
  * @LastEditors: Jinqi Li
- * @LastEditTime: 2021-02-05 11:33:34
- * @FilePath: \billow\next.config.js
+ * @LastEditTime: 2021-02-09 00:02:19
+ * @FilePath: /billow-website/next.config.js
  */
 module.exports = {
 	webpack: (config, { dev }) => {

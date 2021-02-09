@@ -2,8 +2,8 @@
  * @Author: Jinqi Li
  * @Date: 2021-02-03 21:53:11
  * @LastEditors: Jinqi Li
- * @LastEditTime: 2021-02-05 12:06:55
- * @FilePath: \billow\components\headMenu.js
+ * @LastEditTime: 2021-02-08 21:49:55
+ * @FilePath: /billow-website/components/headMenu.js
  */
 import React from 'react';
 import 'antd/dist/antd.css';
@@ -13,6 +13,8 @@ import Meishi from '../public/meishi.svg';
 import Meigu from '../public/meigu.svg';
 import Dushu from '../public/dushu.svg';
 import Huwai from '../public/huwai.svg';
+import Sheying from '../public/sheying.svg';
+import Caiyi from '../public/caiyi.svg';
 
 export default function HeadMenu() {
 	const columns = [
@@ -53,10 +55,12 @@ export default function HeadMenu() {
 		},
 		{
 			key: 5,
+			iconSrc: <Icon component={Sheying} className="custom-icon" />,
 			area: <a href="/photography">摄影</a>
 		},
 		{
 			key: 6,
+			iconSrc: <Icon component={Caiyi} className="custom-icon" />,
 			area: <a href="/show">戏精才艺展示</a>
 		}
 	];

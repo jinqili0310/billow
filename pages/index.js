@@ -2,17 +2,18 @@
  * @Author: Jinqi Li
  * @Date: 1985-10-26 01:15:00
  * @LastEditors: Jinqi Li
- * @LastEditTime: 2021-02-05 12:13:50
- * @FilePath: \billow\pages\index.js
+ * @LastEditTime: 2021-02-09 00:54:51
+ * @FilePath: /billow-website/pages/index.js
  */
 import React from 'react';
-import 'antd/dist/antd.css';
 import Head from 'next/head';
+import 'antd/dist/antd.css';
+import { Avatar, Image } from 'antd';
 import styles from '../styles/Home.module.css';
 import PageHeader from '../components/pageHeader';
 import HomeCarousel from '../components/homeCarousel';
 import HomeArea from '../components/homeArea';
-import { Avatar, Image } from 'antd';
+import PageFooter from '../components/pageFooter';
 
 export default function Home() {
 	return (
@@ -28,54 +29,56 @@ export default function Home() {
 				<HomeArea
 					title="美食"
 					link="/food"
-					cover={<Image src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png" />}
-					avatar={<Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />}
-					cardTitle="美食 card"
-					cardDescription="This is the description"
+					cover={<Image src='/food.jpg' />}
+					avatar={<Avatar src='/logo1.png' />}
+					cardTitle="美食 版块介绍"
+					cardDescription="点击查看"
 				/>
 				<HomeArea
 					title="美股"
 					link="invest"
-					cover={<Image src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png" />}
-					avatar={<Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />}
-					cardTitle="美股 card"
-					cardDescription="This is the description"
+					cover={<Image src='/invest.jpg' />}
+					avatar={<Avatar src='/logo1.png' />}
+					cardTitle="美股 版块介绍"
+					cardDescription="点击查看"
 				/>
 				<HomeArea
 					title="读书/职场"
 					link="growth"
-					cover={<Image src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png" />}
-					avatar={<Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />}
-					cardTitle="读书/职场 card"
-					cardDescription="This is the description"
+					cover={<Image src='/growth.jpg' />}
+					avatar={<Avatar src='/logo1.png' />}
+					cardTitle="读书/职场 版块介绍"
+					cardDescription="点击查看"
 				/>
 				<HomeArea
 					title="户外"
 					link="/outdoor"
-					cover={<Image src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png" />}
-					avatar={<Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />}
-					cardTitle="户外 card"
-					cardDescription="This is the description"
+					cover={<Image src='/outdoor.jpg' />}
+					avatar={<Avatar src='/logo1.png' />}
+					cardTitle="户外 版块介绍"
+					cardDescription="点击查看"
 				/>
 				<HomeArea
 					title="摄影"
 					link="/photography"
-					cover={<Image src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png" />}
-					avatar={<Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />}
-					cardTitle="摄影 card"
-					cardDescription="This is the description"
+					cover={<Image src='/photography.jpg' />}
+					avatar={<Avatar src='/logo1.png' />}
+					cardTitle="摄影 版块介绍"
+					cardDescription="点击查看"
 				/>
 				<HomeArea
 					title="戏精才艺展示"
 					link="show"
-					cover={<Image src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png" />}
-					avatar={<Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />}
-					cardTitle="戏精才艺展示 card"
-					cardDescription="This is the description"
+					cover={<Image src='/show.jpg' />}
+					avatar={<Avatar src='/logo1.png' />}
+					cardTitle="戏精才艺展示 版块介绍"
+					cardDescription="点击查看"
 				/>
 				{/* placeholders end */}
 			</main>
-			<footer className={styles.footer} />
+			<footer>
+				<PageFooter />
+			</footer>
 		</div>
 	);
 }

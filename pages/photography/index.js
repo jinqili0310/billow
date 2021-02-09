@@ -10,12 +10,13 @@ import 'antd/dist/antd.css';
 import PageHeader from '../../components/pageHeader';
 import AreaIntro from '../../components/areaIntro';
 import PostList from '../../components/postList';
+import Sheying from '../../public/sheying.svg';
 
 export default function Food() {
 	return (
 		<div>
 			<PageHeader />
-			<AreaIntro title="摄影" />
+			<AreaIntro icon={Sheying} title="摄影" />
 			<PostList />
 		</div>
 	);
