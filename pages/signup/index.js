@@ -2,8 +2,8 @@
  * @Author: Jinqi Li
  * @Date: 2021-02-04 01:10:27
  * @LastEditors: Jinqi Li
- * @LastEditTime: 2021-02-05 10:46:44
- * @FilePath: \billow\pages\signup\index.js
+ * @LastEditTime: 2021-02-10 04:57:21
+ * @FilePath: /billow-website/pages/signup/index.js
  */
 import React, { useState } from 'react';
 import 'antd/dist/antd.css';
@@ -179,7 +179,7 @@ export default function Signup() {
 				label="Location"
 				rules={[
 					{
-						required: true,
+						required: false,
 						message: 'Please input your location!',
 						whitespace: true
 					}
@@ -193,7 +193,7 @@ export default function Signup() {
 				label="Phone Number"
 				rules={[
 					{
-						required: true,
+						required: false,
 						message: 'Please input your phone number!'
 					}
 				]}
@@ -247,12 +247,12 @@ export default function Signup() {
 						agreement
 					</Button>
 				</Checkbox>
-				<Modal title="Basic Modal" visible={isModalVisible}>
+				<Modal title="User Agreement" visible={isModalVisible}>
 					<p>Some contents...</p>
 					<p>Some contents...</p>
 					<p>Some contents...</p>
 					<Button type="primary" onClick={handleOk}>
-						OK
+						Confirm
 					</Button>
 				</Modal>
 			</Form.Item>

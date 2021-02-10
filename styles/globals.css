@@ -36,6 +36,7 @@ a {
 .ant-affix {
 	top: 0 !important;
 	background-color: #fff;
+	box-shadow: 0 2px 0.02px rgba(0, 0, 0, 0.1);
 }
 .menu-icon {
 	font-size: 24px;
@@ -149,11 +150,12 @@ div.ant-carousel {
 img.carousel-img {
 	height: 180px;
 	width: 100%;
+	border-radius: 5px;
 }
 
 /* homeArea.js */
 div.home-cards {
-	margin: 0 5px 10px 5px;
+	margin: 30px 5px;
 }
 h3.card-title > a {
 	color: #707070 !important;
@@ -170,6 +172,9 @@ div.ant-modal-footer > button.ant-btn {
 	display: none;
 }
 span.ant-modal-close-x {
+	display: none;
+}
+.ant-modal-footer {
 	display: none;
 }
 
@@ -229,23 +234,28 @@ div.post-content {
 .home-card {
 	width: 100%;
 }
+.ant-card-body {
+	padding: 10px !important;
+}
 
 /* pageFooter.js */
-div.footer-div{
-	text-align:center;
-	background: linear-gradient(-60deg, #33cc99,#2575f4);
-	padding: 15px;
+div.footer-div {
+	text-align: center;
+	background: linear-gradient(-60deg, #33cc99, #2575f4);
+	padding: 40px 20px 20px 20px;
+	margin: 40px 0 0 0;
 }
 .footer-logo {
-	font-size: 40px;
+	font-size: 45px;
 	margin-bottom: 10px;
 }
 .footer-wechat {
-	font-size: 30px;
-}
-.footer-red{
 	font-size: 40px;
+	vertical-align: -0.75em;
 }
-h3.footer-follow{
+.footer-red {
+	font-size: 50px;
+}
+h3.footer-follow {
 	color: #fff;
 }
