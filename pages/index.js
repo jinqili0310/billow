@@ -2,7 +2,7 @@
  * @Author: Jinqi Li
  * @Date: 1985-10-26 01:15:00
  * @LastEditors: Jinqi Li
- * @LastEditTime: 2021-02-10 04:10:53
+ * @LastEditTime: 2021-02-10 15:27:45
  * @FilePath: /billow-website/pages/index.js
  */
 import React from 'react';
@@ -30,7 +30,7 @@ export default function Home() {
 					title="美食"
 					link="/food"
 					cover={<Image src='/food.jpg' />}
-					avatar={<Avatar src='/logo1.png' />}
+					avatar={<Avatar src='/meishi0.png' />}
 					cardTitle="美食版块"
 					cardDescription="点击查看"
 				/>
@@ -38,7 +38,7 @@ export default function Home() {
 					title="美股"
 					link="invest"
 					cover={<Image src='/invest.jpg' />}
-					avatar={<Avatar src='/logo1.png' />}
+					avatar={<Avatar src='/meigu0.png' />}
 					cardTitle="美股版块"
 					cardDescription="点击查看"
 				/>
@@ -46,7 +46,7 @@ export default function Home() {
 					title="读书/职场"
 					link="growth"
 					cover={<Image src='/growth.jpg' />}
-					avatar={<Avatar src='/logo1.png' />}
+					avatar={<Avatar src='/dushu0.png' />}
 					cardTitle="读书/职场版块"
 					cardDescription="点击查看"
 				/>
@@ -54,7 +54,7 @@ export default function Home() {
 					title="户外"
 					link="/outdoor"
 					cover={<Image src='/outdoor.jpg' />}
-					avatar={<Avatar src='/logo1.png' />}
+					avatar={<Avatar src='/huwai0.png' />}
 					cardTitle="户外版块"
 					cardDescription="点击查看"
 				/>
@@ -62,7 +62,7 @@ export default function Home() {
 					title="摄影"
 					link="/photography"
 					cover={<Image src='/photography.jpg' />}
-					avatar={<Avatar src='/logo1.png' />}
+					avatar={<Avatar src='/sheying0.png' />}
 					cardTitle="摄影版块"
 					cardDescription="点击查看"
 				/>
@@ -70,7 +70,7 @@ export default function Home() {
 					title="戏精才艺展示"
 					link="show"
 					cover={<Image src='/show.jpg' />}
-					avatar={<Avatar src='/logo1.png' />}
+					avatar={<Avatar src='/caiyi0.png' />}
 					cardTitle="戏精才艺展示版块"
 					cardDescription="点击查看"
 				/>

@@ -259,3 +259,21 @@ div.footer-div {
 h3.footer-follow {
 	color: #fff;
 }
+
+/* posting/index.js */
+div.post-page {
+	margin: 20px;
+	height: calc(100vh - 100px);
+}
+div.post-btn {
+	display: block;
+	text-align: center;
+	margin: 10px;
+}
+div.post-btn > button {
+	margin: 10px;
+	text-align: center;
+}
+.input-body {
+	height: 50% !important;
+}

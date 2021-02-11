@@ -2,8 +2,8 @@
  * @Author: Jinqi Li
  * @Date: 2021-02-04 15:21:40
  * @LastEditors: Jinqi Li
- * @LastEditTime: 2021-02-04 15:37:57
- * @FilePath: \billow\components\postImage.js
+ * @LastEditTime: 2021-02-11 11:30:37
+ * @FilePath: /billow-website/components/postImage.js
  */
 import React from 'react';
 import 'antd/dist/antd.css';
@@ -48,7 +48,7 @@ export default class PostImage extends React.Component {
 		const uploadButton = (
 			<div>
 				<PlusOutlined />
-				<div style={{ marginTop: 8 }}>Upload</div>
+				<div style={{ marginTop: 8 }}>上传图片</div>
 			</div>
 		);
 		return (
@@ -63,7 +63,7 @@ export default class PostImage extends React.Component {
 					{fileList.length >= 8 ? null : uploadButton}
 				</Upload>
 				<Modal visible={previewVisible} title={previewTitle} footer={null} onCancel={this.handleCancel}>
-					<img alt="example" style={{ width: '100%' }} src={previewImage} />
+					<img alt="image uploaded" style={{ width: '100%' }} src={previewImage} />
 				</Modal>
 			</div>
 		);

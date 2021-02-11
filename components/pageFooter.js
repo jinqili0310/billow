@@ -2,7 +2,7 @@
  * @Author: Jinqi Li
  * @Date: 2021-02-09 02:00:20
  * @LastEditors: Jinqi Li
- * @LastEditTime: 2021-02-10 04:43:28
+ * @LastEditTime: 2021-02-11 09:17:03
  * @FilePath: /billow-website/components/pageFooter.js
  */
 import React from 'react';
@@ -14,11 +14,11 @@ import Red from '../public/red.svg';
 
 export default function PageFooter() {
 	return (
-		<div className="footer-div">
+		<div id="aboutUs" className="footer-div">
 			<Row gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }}>
 				<Col className="gutter-row" span={24}>
 					<Icon component={LogoW} className="footer-logo" />
-					<h3 className="footer-follow">FOLLOW US</h3>
+					<h3 className="footer-follow">关注我们</h3>
 				</Col>
 			</Row>
 			<Row gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }}>

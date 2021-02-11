@@ -2,7 +2,7 @@
  * @Author: Jinqi Li
  * @Date: 2021-02-03 21:53:11
  * @LastEditors: Jinqi Li
- * @LastEditTime: 2021-02-08 21:49:55
+ * @LastEditTime: 2021-02-11 09:15:38
  * @FilePath: /billow-website/components/headMenu.js
  */
 import React from 'react';
@@ -41,12 +41,12 @@ export default function HeadMenu() {
 		{
 			key: 2,
 			iconSrc: <Icon component={Meigu} className="custom-icon" />,
-			area: <a href="/invest">美股</a>
+			area: <a href="/investment">美股</a>
 		},
 		{
 			key: 3,
 			iconSrc: <Icon component={Dushu} className="custom-icon" />,
-			area: <a href="/growth">读书/职场</a>
+			area: <a href="/career">读书/职场</a>
 		},
 		{
 			key: 4,
@@ -61,7 +61,7 @@ export default function HeadMenu() {
 		{
 			key: 6,
 			iconSrc: <Icon component={Caiyi} className="custom-icon" />,
-			area: <a href="/show">戏精才艺展示</a>
+			area: <a href="/talentShow">戏精才艺展示</a>
 		}
 	];
 
@@ -71,11 +71,11 @@ export default function HeadMenu() {
 				<Table className="menu-table" dataSource={dataSrc} columns={columns} />
 			</div>
 			<div className="menu-bottom">
-				<a className="menu-bottom-link" href="/about">
-					About Us
+				<a className="menu-bottom-link" href="#aboutUs">
+					关于我们
 				</a>
 				<a className="menu-bottom-link" onClick={openWindow}>
-					Privacy Policies
+					用户条款
 				</a>
 			</div>
 		</div>

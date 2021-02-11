@@ -2,8 +2,8 @@
  * @Author: Jinqi Li
  * @Date: 2021-02-03 21:50:21
  * @LastEditors: Jinqi Li
- * @LastEditTime: 2021-02-05 11:46:13
- * @FilePath: \billow\components\pageHeader.js
+ * @LastEditTime: 2021-02-11 09:18:09
+ * @FilePath: /billow-website/components/pageHeader.js
  */
 import React, { useState } from 'react';
 import 'antd/dist/antd.css';
@@ -38,10 +38,10 @@ export default function PageHeader() {
 				<h1 className="company">Billow</h1>
 			</a>
 			<a href="/signup" className="link">
-				Signup
+				注册
 			</a>
 			<a href="/login" className="link">
-				Login
+				登录
 			</a>
 
 			{menuOpen ? <HeadMenu /> : <div className="placeholder" />}
