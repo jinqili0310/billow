@@ -277,3 +277,6 @@ div.post-btn > button {
 .input-body {
 	height: 50% !important;
 }
+.ant-select.ant-select-single.ant-select-show-arrow {
+	margin-bottom: 10px;
+}

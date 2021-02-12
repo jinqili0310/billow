@@ -2,7 +2,7 @@
  * @Author: Jinqi Li
  * @Date: 2021-02-04 14:27:33
  * @LastEditors: Jinqi Li
- * @LastEditTime: 2021-02-11 13:02:43
+ * @LastEditTime: 2021-02-11 16:43:31
  * @FilePath: /billow-website/pages/posting/index.js
  */
 import React from 'react';
@@ -31,11 +31,7 @@ export default function Posting() {
 		<React.Fragment>
 			<PageHeader />
 			<div className="post-page">
-				<TextArea placeholder="标题" autoSize showCount maxLength={40} />
-
 				<Select
-					bordered={false}
-					mode="multiple"
 					required
 					placeholder="请选择发布版块"
 					onChange={handleChange}
@@ -44,6 +40,7 @@ export default function Posting() {
 					{tagChildren}
 				</Select>
 
+				<TextArea placeholder="标题" autoSize showCount maxLength={40} />
 				<TextArea placeholder="内容简介" autoSize={{ minRows: 2, maxRows: 4 }} showCount maxLength={100} />
 				<PostImage />
 				<TextArea className="input-body" placeholder="正文" autoSize={{ minRow: 4 }} bordered={false} />
