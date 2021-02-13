@@ -2,7 +2,7 @@
  * @Author: Jinqi Li
  * @Date: 2021-02-10 15:46:25
  * @LastEditors: Jinqi Li
- * @LastEditTime: 2021-02-13 13:48:07
+ * @LastEditTime: 2021-02-13 14:50:58
  * @FilePath: /billow-website/models/Post.js
  */
 const mongoose = require('mongoose');
@@ -20,7 +20,6 @@ const PostSchema = new mongoose.Schema(
 		title: {
 			type: String,
 			required: [ true, '请输入标题' ],
-			unique: [ true, '此标题已存在' ],
 			maxlength: [ 40, '请输入最多40个字符' ]
 		},
 		tag: {

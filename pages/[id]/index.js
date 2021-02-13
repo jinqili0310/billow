@@ -2,7 +2,7 @@
  * @Author: Jinqi Li
  * @Date: 2021-02-13 02:54:09
  * @LastEditors: Jinqi Li
- * @LastEditTime: 2021-02-13 14:15:54
+ * @LastEditTime: 2021-02-13 14:48:39
  * @FilePath: /billow-website/pages/[id]/index.js
  */
 import React, { useState, useEffect } from 'react';
@@ -36,7 +36,7 @@ const Post = ({ post }) => {
 				// 	<EllipsisOutlined key="ellipsis" />
 				// ]}
 				>
-					<Meta title={post.title} description={post.description} />
+					<Meta title={post.title} description={post.username} />
 				</Card>
 				<Card>
 					{post.images.map((item) => {
@@ -50,7 +50,7 @@ const Post = ({ post }) => {
 							/>
 						);
 					})}
-					{post.body}
+					<div dangerouslySetInnerHTML={{ __html: data[post.body] }}></div>
 				</Card>
 			</div>
 		</React.Fragment>
