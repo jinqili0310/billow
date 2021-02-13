@@ -2,8 +2,8 @@
  * @Author: Jinqi Li
  * @Date: 2021-02-04 15:17:58
  * @LastEditors: Jinqi Li
- * @LastEditTime: 2021-02-09 01:59:00
- * @FilePath: /billow-website/pages/show/index.js
+ * @LastEditTime: 2021-02-13 03:31:37
+ * @FilePath: /billow-website/pages/talentShow/index.js
  */
 import React from 'react';
 import 'antd/dist/antd.css';
@@ -26,7 +26,7 @@ const TalentShow =({posts}) => {
 				.map((post) => {
 					return (
 						<div key={post._id}>
-							<a href={`../api/posts/${post._id}`}>
+							<a href={`../${post._id}`}>
 								<Card
 									style={{ marginTop: 6 }}
 									type="inner"

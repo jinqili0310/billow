@@ -2,8 +2,8 @@
  * @Author: Jinqi Li
  * @Date: 2021-02-04 01:09:53
  * @LastEditors: Jinqi Li
- * @LastEditTime: 2021-02-05 12:03:05
- * @FilePath: \billow\pages\about\index.js
+ * @LastEditTime: 2021-02-12 02:04:57
+ * @FilePath: /billow-website/pages/about/index.js
  */
 import React from 'react';
 import PageHeader from '../../components/pageHeader';

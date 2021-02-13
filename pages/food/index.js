@@ -2,7 +2,7 @@
  * @Author: Jinqi Li
  * @Date: 2021-02-04 01:10:51
  * @LastEditors: Jinqi Li
- * @LastEditTime: 2021-02-11 16:39:50
+ * @LastEditTime: 2021-02-13 03:15:33
  * @FilePath: /billow-website/pages/food/index.js
  */
 import React from 'react';
@@ -26,7 +26,7 @@ const Food = ({ posts }) => {
 				.map((post) => {
 					return (
 						<div key={post._id}>
-							<a href={`../api/posts/${post._id}`}>
+							<a href={`../${post._id}`}>
 								<Card
 									style={{ marginTop: 6 }}
 									type="inner"

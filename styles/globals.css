@@ -261,22 +261,91 @@ h3.footer-follow {
 }
 
 /* posting/index.js */
-div.post-page {
-	margin: 20px;
+.post-page {
+	margin: 20px !important;
 	height: calc(100vh - 100px);
 }
 div.post-btn {
-	display: block;
 	text-align: center;
-	margin: 10px;
+	margin: 10px auto 20px auto !important;
 }
-div.post-btn > button {
-	margin: 10px;
+.post-action {
+	width: 45%;
+	margin: 0 auto 20px auto !important;
 	text-align: center;
+}
+.post-action > button {
+	border-radius: 2px !important;
+	text-shadow: 0 -1px 0 rgb(0 0 0 / 12%) !important;
+	box-shadow: 0 2px 0 rgb(0 0 0 / 5%) !important;
+	font-weight: 400 !important;
+	white-space: nowrap;
+	height: 32px;
+	padding: 4px 15px !important;
+	font-size: 14px !important;
+}
+.post-action:nth-child(1) > button {
+	background-color: #1890ff !important;
+	color: #fff;
+	border: 1px solid #1890ff;
+}
+.post-action:nth-child(2) > button {
+	background-color: #fff;
+	border: 1px solid #d9d9d9;
+	color: rgba(0, 0, 0, .7);
 }
 .input-body {
-	height: 50% !important;
+	height: 40%;
+	margin-bottom: 50px !important;
 }
-.ant-select.ant-select-single.ant-select-show-arrow {
-	margin-bottom: 10px;
+.input-body > textarea {
+	height: 100% !important;
+}
+.ui,
+.ui.form input[type=text],
+.ui.form input[type=file],
+.ui.form textarea,
+.ui.button {
+	font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans,
+		Helvetica Neue, sans-serif !important;
+}
+.image-upload {
+	max-width: 100%;
+}
+.input-image {
+	border: 1px solid #ccc;
+	display: inline-block;
+	padding: 6px 12px;
+	cursor: pointer;
+}
+input#upload-img {
+	display: none;
+}
+div.image-preview {
+	max-width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	margin: 10px auto;
+	justify-content: flex-start;
+	flex-direction: row;
+}
+div.image-each {
+	display: flex;
+	align-items: flex-start;
+	margin: 0 5px 2px 0;
+}
+img.image-thumbnail {
+	height: 80px;
+	width: 80px;
+	object-fit: cover;
+	border: 1px solid #d9d9d9;
+}
+.hover-delete {
+	/* position: absolute;
+	left: 62px; */
+	z-index: 99;
+	color: #fff;
+	font-size: 14px;
+	padding: 1px 3px;
+	background-color: rgba(255, 0, 0, 0.5);
 }

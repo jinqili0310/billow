@@ -2,8 +2,8 @@
  * @Author: Jinqi Li
  * @Date: 2021-02-04 15:18:15
  * @LastEditors: Jinqi Li
- * @LastEditTime: 2021-02-05 11:58:47
- * @FilePath: \billow\pages\photography\index.js
+ * @LastEditTime: 2021-02-13 03:31:27
+ * @FilePath: /billow-website/pages/photography/index.js
  */
 import React from 'react';
 import 'antd/dist/antd.css';
@@ -26,7 +26,7 @@ const Photography = ({posts})=> {
 				.map((post) => {
 					return (
 						<div key={post._id}>
-							<a href={`../api/posts/${post._id}`}>
+							<a href={`../${post._id}`}>
 								<Card
 									style={{ marginTop: 6 }}
 									type="inner"

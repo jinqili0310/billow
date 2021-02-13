@@ -2,7 +2,7 @@
  * @Author: Jinqi Li
  * @Date: 2021-02-03 22:18:56
  * @LastEditors: Jinqi Li
- * @LastEditTime: 2021-02-11 09:43:41
+ * @LastEditTime: 2021-02-12 13:57:50
  * @FilePath: /billow-website/next.config.js
  */
 module.exports = {
@@ -44,6 +44,7 @@ module.exports = {
 	},
 
 	env: {
-		MONGO_URI: "mongodb+srv://billow-admin:n2UXAYnz3i0OMUyY@clusterbillow.zl3li.mongodb.net/postDB?retryWrites=true&w=majority"
+		MONGO_URI: "mongodb+srv://billow-admin:n2UXAYnz3i0OMUyY@clusterbillow.zl3li.mongodb.net/postDB?retryWrites=true&w=majority",
+		CLOUD_API: "https://v1.nocodeapi.com/jinqili/cloudinary/ihYCGJsCpaNHyPfy"
 	}
 };

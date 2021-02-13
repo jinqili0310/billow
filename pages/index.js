@@ -2,7 +2,7 @@
  * @Author: Jinqi Li
  * @Date: 1985-10-26 01:15:00
  * @LastEditors: Jinqi Li
- * @LastEditTime: 2021-02-10 15:27:45
+ * @LastEditTime: 2021-02-11 23:09:56
  * @FilePath: /billow-website/pages/index.js
  */
 import React from 'react';
@@ -36,7 +36,7 @@ export default function Home() {
 				/>
 				<HomeArea
 					title="美股"
-					link="invest"
+					link="/investment"
 					cover={<Image src='/invest.jpg' />}
 					avatar={<Avatar src='/meigu0.png' />}
 					cardTitle="美股版块"
@@ -44,7 +44,7 @@ export default function Home() {
 				/>
 				<HomeArea
 					title="读书/职场"
-					link="growth"
+					link="/career"
 					cover={<Image src='/growth.jpg' />}
 					avatar={<Avatar src='/dushu0.png' />}
 					cardTitle="读书/职场版块"
@@ -68,7 +68,7 @@ export default function Home() {
 				/>
 				<HomeArea
 					title="戏精才艺展示"
-					link="show"
+					link="/talentShow"
 					cover={<Image src='/show.jpg' />}
 					avatar={<Avatar src='/caiyi0.png' />}
 					cardTitle="戏精才艺展示版块"

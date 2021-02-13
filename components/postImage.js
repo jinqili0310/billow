@@ -2,68 +2,91 @@
  * @Author: Jinqi Li
  * @Date: 2021-02-04 15:21:40
  * @LastEditors: Jinqi Li
- * @LastEditTime: 2021-02-11 11:30:37
+ * @LastEditTime: 2021-02-12 02:04:09
  * @FilePath: /billow-website/components/postImage.js
  */
 import React from 'react';
 import 'antd/dist/antd.css';
 import { Upload, Modal } from 'antd';
 import { PlusOutlined } from '@ant-design/icons';
+import { server } from '../config';
 
-function getBase64(file) {
-	return new Promise((resolve, reject) => {
-		const reader = new FileReader();
-		reader.readAsDataURL(file);
-		reader.onload = () => resolve(reader.result);
-		reader.onerror = (error) => reject(error);
-	});
-}
+const UPLOAD_URL = `${server}/api/images`;
+const DELETE_URL = `${server}/delete`;
 
 export default class PostImage extends React.Component {
 	state = {
 		previewVisible: false,
 		previewImage: '',
-		previewTitle: '',
-		fileList: []
+		previewImageName: ''
 	};
 
-	handleCancel = () => this.setState({ previewVisible: false });
-
-	handlePreview = async (file) => {
-		if (!file.url && !file.preview) {
-			file.preview = await getBase64(file.originFileObj);
-		}
-
+	showPreview = (file) => {
 		this.setState({
-			previewImage: file.url || file.preview,
 			previewVisible: true,
-			previewTitle: file.name || file.url.substring(file.url.lastIndexOf('/') + 1)
+			previewImage: file.url || file.thumbUrl,
+			previewImageName: file.name
 		});
 	};
 
-	handleChange = ({ fileList }) => this.setState({ fileList });
+	hidePreview = () => {
+		this.setState({
+			previewVisible: false
+		});
+	};
+
+	optimizeFileList = (data, fileList) => {
+		const { name, url } = data;
+		const file = fileList.pop();
+		const { uid } = file;
+		const newFile = { uid, name, url: `${server}/${url}` };
+		fileList.push(newFile);
+	};
+
+	handleChange = ({ file, fileList }) => {
+		const { status, response } = file;
+		if (status === 'done') {
+			const { ok, message: msg, data } = response;
+			if (ok) {
+				this.optimizeFileList(data, fileList);
+				this.props.onChange(fileList);
+				message.success(msg);
+			} else {
+				message.error(msg);
+			}
+		}
+		this.setState({ fileList });
+	};
+
+	handleRemove = async (file) => {
+		const { url } = file;
+		if (url) {
+			const path = url.replace(`${server}`, '');
+			const response = await fetch(DELETE_URL, {
+				method: 'delete',
+				headers: { 'content-type': 'application/json' },
+				body: JSON.stringify({ path })
+			});
+			const { ok, message: msg } = await response.json();
+			if (ok) {
+				message.success(msg);
+			} else {
+				message.error(msg);
+				return false;
+			}
+		}
+	};
 
 	render() {
-		const { previewVisible, previewImage, fileList, previewTitle } = this.state;
-		const uploadButton = (
-			<div>
-				<PlusOutlined />
-				<div style={{ marginTop: 8 }}>上传图片</div>
-			</div>
-		);
+		const { previewVisible, previewImage, previewImageName } = this.state;
 		return (
 			<div>
-				<Upload
-					action="https://www.mocky.io/v2/5cc8019d300000980a055e76"
-					listType="picture-card"
-					fileList={fileList}
-					onPreview={this.handlePreview}
-					onChange={this.handleChange}
-				>
-					{fileList.length >= 8 ? null : uploadButton}
+				<Upload action={UPLOAD_URL} listType="picture-card" onPreview={this.showPreview}>
+					<PlusOutlined />
+					<div style={{ marginTop: 8, color: '#666' }}>上传图片</div>
 				</Upload>
-				<Modal visible={previewVisible} title={previewTitle} footer={null} onCancel={this.handleCancel}>
-					<img alt="image uploaded" style={{ width: '100%' }} src={previewImage} />
+				<Modal visible={previewVisible} footer={null} onCancel={this.hidePreview}>
+					<img src={previewImage} alt={previewImageName} style={{ width: '100%' }} />
 				</Modal>
 			</div>
 		);

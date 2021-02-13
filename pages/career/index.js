@@ -2,8 +2,8 @@
  * @Author: Jinqi Li
  * @Date: 2021-02-04 01:12:07
  * @LastEditors: Jinqi Li
- * @LastEditTime: 2021-02-05 00:00:07
- * @FilePath: /billow-website/pages/growth/index.js
+ * @LastEditTime: 2021-02-13 03:30:59
+ * @FilePath: /billow-website/pages/career/index.js
  */
 import React from 'react';
 import 'antd/dist/antd.css';
@@ -26,7 +26,7 @@ const Career = ({posts}) => {
 				.map((post) => {
 					return (
 						<div key={post._id}>
-							<a href={`../api/posts/${post._id}`}>
+							<a href={`../${post._id}`}>
 								<Card
 									style={{ marginTop: 6 }}
 									type="inner"
