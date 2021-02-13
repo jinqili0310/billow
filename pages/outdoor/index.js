@@ -2,10 +2,11 @@
  * @Author: Jinqi Li
  * @Date: 2021-02-04 01:11:25
  * @LastEditors: Jinqi Li
- * @LastEditTime: 2021-02-13 03:31:19
+ * @LastEditTime: 2021-02-13 11:04:38
  * @FilePath: /billow-website/pages/outdoor/index.js
  */
 import React from 'react';
+import Head from 'next/head';
 import 'antd/dist/antd.css';
 import PageHeader from '../../components/pageHeader';
 import AreaIntro from '../../components/areaIntro';
@@ -17,7 +18,11 @@ import { Card } from 'antd';
 
 const Outdoor =({posts})=> {
 	return (
-		<div>
+		<React.Fragment>
+			<Head>
+				<title>Billow</title>
+				<link rel="icon" href="/logo.ico" />
+			</Head>
 			<PageHeader />
 			<AreaIntro icon={Huwai} title="户外" />
 			
@@ -40,7 +45,7 @@ const Outdoor =({posts})=> {
 				})}
 			</div>
 
-		</div>
+		</React.Fragment>
 	);
 }
 

@@ -2,10 +2,11 @@
  * @Author: Jinqi Li
  * @Date: 2021-02-04 15:18:15
  * @LastEditors: Jinqi Li
- * @LastEditTime: 2021-02-13 03:31:27
+ * @LastEditTime: 2021-02-13 10:44:19
  * @FilePath: /billow-website/pages/photography/index.js
  */
 import React from 'react';
+import Head from 'next/head';
 import 'antd/dist/antd.css';
 import PageHeader from '../../components/pageHeader';
 import AreaIntro from '../../components/areaIntro';
@@ -17,7 +18,11 @@ import { Card } from 'antd';
 
 const Photography = ({posts})=> {
 	return (
-		<div>
+		<React.Fragment>
+			<Head>
+				<title>Billow</title>
+				<link rel="icon" href="/logo.ico" />
+			</Head>
 			<PageHeader />
 			<AreaIntro icon={Sheying} title="摄影" />
 			
@@ -40,7 +45,7 @@ const Photography = ({posts})=> {
 				})}
 			</div>
 
-		</div>
+		</React.Fragment>
 	);
 }
 

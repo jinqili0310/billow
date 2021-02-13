@@ -2,14 +2,19 @@
  * @Author: Jinqi Li
  * @Date: 2021-02-04 13:23:56
  * @LastEditors: Jinqi Li
- * @LastEditTime: 2021-02-04 13:30:49
- * @FilePath: \billow\pages\_app.js
+ * @LastEditTime: 2021-02-13 10:54:40
+ * @FilePath: /billow-website/pages/_app.js
  */
 import React from 'react';
-import '../styles/globals.css'
+import '../styles/globals.css';
+import { DataProvider } from '../store/GlobalState';
 
 function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+	return (
+		<DataProvider>
+			<Component {...pageProps} />
+		</DataProvider>
+	);
 }
 
-export default MyApp
+export default MyApp;

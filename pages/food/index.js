@@ -2,10 +2,11 @@
  * @Author: Jinqi Li
  * @Date: 2021-02-04 01:10:51
  * @LastEditors: Jinqi Li
- * @LastEditTime: 2021-02-13 03:15:33
+ * @LastEditTime: 2021-02-13 11:04:56
  * @FilePath: /billow-website/pages/food/index.js
  */
 import React from 'react';
+import Head from 'next/head';
 import 'antd/dist/antd.css';
 import PageHeader from '../../components/pageHeader';
 import AreaIntro from '../../components/areaIntro';
@@ -17,7 +18,11 @@ import { Card } from 'antd';
 
 const Food = ({ posts }) => {
 	return (
-		<div>
+		<React.Fragment>
+			<Head>
+				<title>Billow</title>
+				<link rel="icon" href="/logo.ico" />
+			</Head>
 			<PageHeader />
 			<AreaIntro icon={Meishi} title="美食" />
 			
@@ -40,7 +45,7 @@ const Food = ({ posts }) => {
 				})}
 			</div>
 			
-		</div>
+		</React.Fragment>
 	);
 };
 

@@ -2,10 +2,11 @@
  * @Author: Jinqi Li
  * @Date: 2021-02-04 14:27:33
  * @LastEditors: Jinqi Li
- * @LastEditTime: 2021-02-13 05:09:47
+ * @LastEditTime: 2021-02-13 11:59:14
  * @FilePath: /billow-website/pages/posting/index.js
  */
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
+import Head from 'next/head';
 import 'antd/dist/antd.css';
 import { CloudUploadOutlined, DeleteOutlined } from '@ant-design/icons';
 import fetch from 'isomorphic-unfetch';
@@ -15,8 +16,13 @@ import PageHeader from '../../components/pageHeader';
 import { Form, Loader } from 'semantic-ui-react';
 import 'semantic-ui-css/semantic.min.css';
 import { imageUpload } from '../../utils/imageUpload';
+import { DataContext } from '../../store/GlobalState';
+import { postData, getData, putData } from '../../utils/fetchData';
 
 export default function Posting() {
+	const { state, dispatch } = useContext(DataContext);
+	const { auth } = state;
+
 	const tagChildren = [
 		{ key: 'food', text: '美食', value: 'food' },
 		{ key: 'investment', text: '美股', value: 'investment' },
@@ -47,6 +53,7 @@ export default function Posting() {
 
 	const createPost = async () => {
 		try {
+			console.log(form)
 			const res = await fetch(`${server}/api/posts`, {
 				method: 'POST',
 				headers: {
@@ -141,6 +148,10 @@ export default function Posting() {
 
 	return (
 		<React.Fragment>
+			<Head>
+				<title>Billow</title>
+				<link rel="icon" href="/logo.ico" />
+			</Head>
 			<PageHeader />
 			{isSubmitting ? (
 				<Loader active inline="centered" />

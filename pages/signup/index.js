@@ -1,63 +1,80 @@
 /*
  * @Author: Jinqi Li
- * @Date: 2021-02-04 01:10:27
+ * @Date: 2021-02-04 01:09:53
  * @LastEditors: Jinqi Li
- * @LastEditTime: 2021-02-10 04:57:21
+ * @LastEditTime: 2021-02-13 11:48:16
  * @FilePath: /billow-website/pages/signup/index.js
  */
-import React, { useState } from 'react';
-import 'antd/dist/antd.css';
-import { Form, Input, Tooltip, Select, Checkbox, Button, Modal } from 'antd';
-import { QuestionCircleOutlined } from '@ant-design/icons';
+import React, { useState, useContext, useEffect } from 'react';
+import Head from 'next/head';
 import PageHeader from '../../components/pageHeader';
+import 'antd/dist/antd.css';
+import { Form, Input, Select, Checkbox, Button } from 'antd';
+import { postData } from '../../utils/fetchData';
+import { useRouter } from 'next/router';
+import { DataContext } from '../../store/GlobalState';
 
-const { displayRender } = Input;
+const { Option } = Select;
+
+const formItemLayout = {
+	labelCol: {
+		xs: {
+			span: 24
+		},
+		sm: {
+			span: 8
+		}
+	},
+	wrapperCol: {
+		xs: {
+			span: 24
+		},
+		sm: {
+			span: 16
+		}
+	}
+};
+const tailFormItemLayout = {
+	wrapperCol: {
+		xs: {
+			span: 24,
+			offset: 0
+		},
+		sm: {
+			span: 16,
+			offset: 8
+		}
+	}
+};
 
 export default function Signup() {
-	// form
-	const { Option } = Select;
-	const formItemLayout = {
-		labelCol: {
-			xs: {
-				span: 24
-			},
-			sm: {
-				span: 8
-			}
-		},
-		wrapperCol: {
-			xs: {
-				span: 24
-			},
-			sm: {
-				span: 16
-			}
-		}
-	};
-	const tailFormItemLayout = {
-		wrapperCol: {
-			xs: {
-				span: 24,
-				offset: 0
-			},
-			sm: {
-				span: 16,
-				offset: 8
-			}
-		}
-	};
-
 	const [ form ] = Form.useForm();
+	const router = useRouter();
 
-	const onFinish = (values) => {
+	const { state, dispatch } = useContext(DataContext);
+	const { auth } = state;
+
+	const onFinish = async (values) => {
 		console.log('Received values of form: ', values);
+		try {
+			const res = await postData('auth/signup', values);
+		} catch (error) {
+			console.log(error);
+		}
 	};
+
+	useEffect(
+		() => {
+			if (Object.keys(auth).length !== 0) router.push('/');
+		},
+		[ auth ]
+	);
 
 	const prefixSelector = (
 		<Form.Item name="prefix" noStyle>
 			<Select
 				style={{
-					width: 100
+					width: 120
 				}}
 			>
 				<Option value="1 (US)">+1 (US)</Option>
@@ -66,203 +83,147 @@ export default function Signup() {
 		</Form.Item>
 	);
 
-	// modal
-	const [ isModalVisible, setIsModalVisible ] = useState(false);
-	const [ checked, setChecked ] = useState(false);
-
-	const onChangeCheck = (e) => {
-		console.log('checked = ', e.target.checked);
-		setChecked(e.target.checked);
-	};
-
-	const showModal = () => {
-		setIsModalVisible(true);
-	};
-
-	const handleOk = () => {
-		setChecked(true);
-		setIsModalVisible(false);
-	};
-
 	return (
 		<React.Fragment>
+			<Head>
+				<title>Billow</title>
+				<link rel="icon" href="/logo.ico" />
+			</Head>
 			<PageHeader />
-		<Form
-			{...formItemLayout}
-			form={form}
-			name="register"
-			onFinish={onFinish}
-			initialValues={{
-				location: 'Seattle, WA',
-				prefix: '1 (US)'
-			}}
-			scrollToFirstError
-		>
-			<Form.Item
-				name="email"
-				label="E-mail"
-				rules={[
-					{
-						type: 'email',
-						message: 'The input is not valid E-mail!'
-					},
-					{
-						required: true,
-						message: 'Please input your E-mail!'
-					}
-				]}
+
+			<Form
+				{...formItemLayout}
+				form={form}
+				name="register"
+				onFinish={onFinish}
+				initialValues={{
+					location: 'Seattle, WA',
+					prefix: '1 (US)'
+				}}
+				scrollToFirstError
 			>
-				<Input displayRender={(label) => label} />
-			</Form.Item>
-
-			<Form.Item
-				name="password"
-				label="Password"
-				rules={[
-					{
-						required: true,
-						message: 'Please input your password!'
-					}
-				]}
-				hasFeedback
-			>
-				<Input.Password displayRender={(label) => label} />
-			</Form.Item>
-
-			<Form.Item
-				name="confirm"
-				label="Confirm Password"
-				dependencies={[ 'password' ]}
-				hasFeedback
-				rules={[
-					{
-						required: true,
-						message: 'Please confirm your password!'
-					},
-					({ getFieldValue }) => ({
-						validator(_, value) {
-							if (!value || getFieldValue('password') === value) {
-								return Promise.resolve();
-							}
-
-							return Promise.reject('The two passwords that you entered do not match!');
+				<Form.Item
+					name="email"
+					label="邮箱地址"
+					rules={[
+						{
+							type: 'email',
+							message: '请输入正确的邮箱地址'
+						},
+						{
+							required: true,
+							message: '请输入您的邮箱地址'
 						}
-					})
-				]}
-			>
-				<Input.Password displayRender={(label) => label} />
-			</Form.Item>
+					]}
+				>
+					<Input />
+				</Form.Item>
 
-			<Form.Item
-				name="username"
-				label={
-					<span>
-						Username&nbsp;
-						<Tooltip title="What do you want others to call you?">
-							<QuestionCircleOutlined />
-						</Tooltip>
-					</span>
-				}
-				rules={[
-					{
-						required: true,
-						message: 'Please input your username!',
-						whitespace: true
-					}
-				]}
-			>
-				<Input displayRender={(label) => label} />
-			</Form.Item>
+				<Form.Item
+					name="password"
+					label="密码"
+					rules={[
+						{
+							required: true,
+							message: '请输入您的密码'
+						}
+					]}
+					hasFeedback
+				>
+					<Input.Password />
+				</Form.Item>
 
-			<Form.Item
-				name="location"
-				label="Location"
-				rules={[
-					{
-						required: false,
-						message: 'Please input your location!',
-						whitespace: true
-					}
-				]}
-			>
-				<Input displayRender={(label) => label} />
-			</Form.Item>
-
-			<Form.Item
-				name="phone"
-				label="Phone Number"
-				rules={[
-					{
-						required: false,
-						message: 'Please input your phone number!'
-					}
-				]}
-			>
-				<Input
-					addonBefore={prefixSelector}
-					style={{
-						width: '100%'
-					}}
-					displayRender={(label) => label}
-				/>
-			</Form.Item>
-
-			{/* TODO
-            短信验证 */}
-			{/* <Form.Item label="Captcha" extra="We must make sure that your are a human.">
-				<Row gutter={8}>
-					<Col span={12}>
-						<Form.Item
-							name="captcha"
-							noStyle
-							rules={[
-								{
-									required: true,
-									message: 'Please input the captcha you got!'
+				<Form.Item
+					name="confirm"
+					label="确认密码"
+					dependencies={[ 'password' ]}
+					hasFeedback
+					rules={[
+						{
+							required: true,
+							message: '请确认您的密码'
+						},
+						({ getFieldValue }) => ({
+							validator(_, value) {
+								if (!value || getFieldValue('password') === value) {
+									return Promise.resolve();
 								}
-							]}
-						>
-							<Input />
-						</Form.Item>
-					</Col>
-					<Col span={12}>
-						<Button>Get captcha</Button>
-					</Col>
-				</Row>
-			</Form.Item> */}
+								return Promise.reject('两次输入的密码不一致');
+							}
+						})
+					]}
+				>
+					<Input.Password />
+				</Form.Item>
 
-			<Form.Item
-				name="agreement"
-				valuePropName="checked"
-				rules={[
-					{
-						validator: (_, value) => (value ? Promise.resolve() : Promise.reject('Should accept agreement'))
-					}
-				]}
-				{...tailFormItemLayout}
-			>
-				<Checkbox checked={checked} onChange={onChangeCheck}>
-					I have read the
-					<Button onClick={showModal}>
-						agreement
-					</Button>
-				</Checkbox>
-				<Modal title="User Agreement" visible={isModalVisible}>
-					<p>Some contents...</p>
-					<p>Some contents...</p>
-					<p>Some contents...</p>
-					<Button type="primary" onClick={handleOk}>
-						Confirm
-					</Button>
-				</Modal>
-			</Form.Item>
+				<Form.Item
+					name="username"
+					label="用户名"
+					rules={[
+						{
+							required: true,
+							message: '请输入您的用户名',
+							whitespace: false
+						}
+					]}
+				>
+					<Input />
+				</Form.Item>
 
-			<Form.Item {...tailFormItemLayout}>
-				<Button type="primary" htmlType="submit">
-					Register
-				</Button>
-			</Form.Item>
-		</Form>
+				<Form.Item
+					name="location"
+					label="所在地区"
+					rules={[
+						{
+							required: false,
+							whitespace: true
+						}
+					]}
+				>
+					<Input />
+				</Form.Item>
+
+				<Form.Item
+					name="phone"
+					label="手机号码"
+					rules={[
+						{
+							required: false
+						}
+					]}
+				>
+					<Input
+						addonBefore={prefixSelector}
+						style={{
+							width: '100%'
+						}}
+					/>
+				</Form.Item>
+
+				<Form.Item
+					name="agreement"
+					valuePropName="checked"
+					rules={[
+						{
+							validator: (_, value) => (value ? Promise.resolve() : Promise.reject('请确认用户条款'))
+						}
+					]}
+					{...tailFormItemLayout}
+				>
+					<Checkbox>
+						我已阅读并同意{' '}
+						<a href="/" target="_blank">
+							用户条款
+						</a>
+					</Checkbox>
+				</Form.Item>
+
+				<Form.Item {...tailFormItemLayout}>
+					<Button type="primary" htmlType="submit">
+						确认注册
+					</Button>
+				</Form.Item>
+			</Form>
 		</React.Fragment>
 	);
 }

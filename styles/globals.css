@@ -177,6 +177,14 @@ span.ant-modal-close-x {
 .ant-modal-footer {
 	display: none;
 }
+.term-btn {
+	border: none !important;
+	padding: 0 !important;
+}
+.term-btn > span {
+	text-decoration: underline;
+	color: #1890ff;
+}
 
 /* areaIntro.js */
 div.intro-div {

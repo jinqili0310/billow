@@ -2,11 +2,12 @@
  * @Author: Jinqi Li
  * @Date: 2021-02-13 02:54:09
  * @LastEditors: Jinqi Li
- * @LastEditTime: 2021-02-13 03:29:57
+ * @LastEditTime: 2021-02-13 11:05:19
  * @FilePath: /billow-website/pages/[id]/index.js
  */
-import fetch from 'isomorphic-unfetch';
 import React, { useState, useEffect } from 'react';
+import Head from 'next/head';
+import fetch from 'isomorphic-unfetch';
 import { useRouter } from 'next/router';
 import { server } from '../../config';
 import 'antd/dist/antd.css';
@@ -22,6 +23,10 @@ const { TextArea } = Input;
 const Post = ({ post }) => {
 	return (
 		<React.Fragment>
+			<Head>
+				<title>Billow</title>
+				<link rel="icon" href="/logo.ico" />
+			</Head>
 			<PageHeader />
 			<div className="post-content">
 				<Card
@@ -36,8 +41,8 @@ const Post = ({ post }) => {
 				<Card>
 					{post.images.map((item) => {
 						return (
-                            <img
-                                key={item.public_id}
+							<img
+								key={item.public_id}
 								style={{ margin: '0 auto 1em auto', display: 'block' }}
 								width={200}
 								alt="post image"

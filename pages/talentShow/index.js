@@ -2,14 +2,14 @@
  * @Author: Jinqi Li
  * @Date: 2021-02-04 15:17:58
  * @LastEditors: Jinqi Li
- * @LastEditTime: 2021-02-13 03:31:37
+ * @LastEditTime: 2021-02-13 11:16:00
  * @FilePath: /billow-website/pages/talentShow/index.js
  */
 import React from 'react';
+import Head from 'next/head';
 import 'antd/dist/antd.css';
 import PageHeader from '../../components/pageHeader';
 import AreaIntro from '../../components/areaIntro';
-import PostList from '../../components/postList';
 import Caiyi from '../../public/caiyi.svg';
 import fetch from 'isomorphic-unfetch';
 import { server } from '../../config';
@@ -17,7 +17,11 @@ import { Card } from 'antd';
 
 const TalentShow =({posts}) => {
 	return (
-		<div>
+		<React.Fragment>
+			<Head>
+				<title>Billow</title>
+				<link rel="icon" href="/logo.ico" />
+			</Head>
 			<PageHeader />
 			<AreaIntro icon={Caiyi} title="戏精才艺展示" />
 			
@@ -40,7 +44,7 @@ const TalentShow =({posts}) => {
 				})}
 			</div>
 
-		</div>
+		</React.Fragment>
 	);
 }
 
