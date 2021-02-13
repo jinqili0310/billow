@@ -2,21 +2,21 @@
  * @Author: Jinqi Li
  * @Date: 2021-02-10 15:46:25
  * @LastEditors: Jinqi Li
- * @LastEditTime: 2021-02-12 12:52:38
+ * @LastEditTime: 2021-02-13 13:48:07
  * @FilePath: /billow-website/models/Post.js
  */
 const mongoose = require('mongoose');
 
 const PostSchema = new mongoose.Schema(
 	{
-		// userName: {
-		// 	type: String,
-		// 	required: true
-		// },
-		// userId: {
-		// 	type: String,
-		// 	required: true
-		// },
+		userName: {
+			type: String,
+			required: false
+		},
+		userId: {
+			type: String,
+			required: false
+		},
 		title: {
 			type: String,
 			required: [ true, '请输入标题' ],

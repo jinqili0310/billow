@@ -2,7 +2,7 @@
  * @Author: Jinqi Li
  * @Date: 2021-02-13 05:44:44
  * @LastEditors: Jinqi Li
- * @LastEditTime: 2021-02-13 08:50:47
+ * @LastEditTime: 2021-02-13 13:51:05
  * @FilePath: /billow-website/models/User.js
  */
 const mongoose = require('mongoose');
@@ -23,7 +23,8 @@ const UserSchema = new mongoose.Schema(
 			required: true
 		},
 		confirm: {
-			type: String
+			type: String,
+			required: false
 		},
 		location: {
 			type: String,
