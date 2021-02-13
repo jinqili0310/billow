@@ -2,7 +2,7 @@
  * @Author: Jinqi Li
  * @Date: 2021-02-13 02:54:09
  * @LastEditors: Jinqi Li
- * @LastEditTime: 2021-02-13 11:05:19
+ * @LastEditTime: 2021-02-13 14:15:54
  * @FilePath: /billow-website/pages/[id]/index.js
  */
 import React, { useState, useEffect } from 'react';
@@ -50,7 +50,7 @@ const Post = ({ post }) => {
 							/>
 						);
 					})}
-					<p>{post.body}</p>
+					{post.body}
 				</Card>
 			</div>
 		</React.Fragment>
