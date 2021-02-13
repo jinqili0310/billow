@@ -2,7 +2,7 @@
  * @Author: Jinqi Li
  * @Date: 2021-02-10 15:46:25
  * @LastEditors: Jinqi Li
- * @LastEditTime: 2021-02-13 14:50:58
+ * @LastEditTime: 2021-02-13 15:32:45
  * @FilePath: /billow-website/models/Post.js
  */
 const mongoose = require('mongoose');
