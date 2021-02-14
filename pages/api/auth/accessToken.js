@@ -2,7 +2,7 @@
  * @Author: Jinqi Li
  * @Date: 2021-02-13 10:34:32
  * @LastEditors: Jinqi Li
- * @LastEditTime: 2021-02-13 16:38:17
+ * @LastEditTime: 2021-02-13 19:09:28
  * @FilePath: /billow-website/pages/api/auth/accessToken.js
  */
 import dbConnect from '../../../utils/dbConnect';
@@ -27,9 +27,7 @@ export default async (req, res) => {
 		res.json({
 			access_token,
 			user: {
-				userName: user.userName,
-				email: user.email,
-				role: user.role
+				email: user.email
 			}
 		});
 	} catch (err) {
