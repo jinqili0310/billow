@@ -345,7 +345,7 @@ div.post-btn {
 	font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans,
 		Helvetica Neue, sans-serif !important;
 }
-.ui.pointing.above.prompt.label {
+.ui.form .field .ui.pointing.above.prompt.label {
 	border: none !important;
 	color: #ff4d4f !important;
 }
