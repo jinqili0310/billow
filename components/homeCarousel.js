@@ -2,7 +2,7 @@
  * @Author: Jinqi Li
  * @Date: 2021-02-04 01:08:07
  * @LastEditors: Jinqi Li
- * @LastEditTime: 2021-02-13 17:51:38
+ * @LastEditTime: 2021-02-13 18:13:58
  * @FilePath: /billow-website/components/homeCarousel.js
  */
 import React from 'react';
@@ -11,7 +11,7 @@ import { Carousel } from 'antd';
 
 export default function HomeCarousel() {
 	return (
-		<Carousel >
+		<Carousel autoplay >
 			<div>
 				<a href="/food">
 				<h3 className="carousel-text" >
