@@ -2,7 +2,7 @@
  * @Author: Jinqi Li
  * @Date: 2021-02-04 01:10:06
  * @LastEditors: Jinqi Li
- * @LastEditTime: 2021-02-13 11:48:26
+ * @LastEditTime: 2021-02-13 16:33:19
  * @FilePath: /billow-website/pages/login/index.js
  */
 import React, { useState, useContext, useEffect } from 'react';
@@ -64,22 +64,22 @@ export default function Login() {
 				onFinish={onFinish}
 			>
 				<Form.Item
-					name="username"
+					name="email"
 					rules={[
 						{
 							required: true,
-							message: 'Please input your Username!'
+							message: '请输入您的邮箱地址'
 						}
 					]}
 				>
-					<Input prefix={<UserOutlined className="site-form-item-icon" />} placeholder="用户名" />
+					<Input prefix={<UserOutlined className="site-form-item-icon" />} placeholder="邮箱地址" />
 				</Form.Item>
 				<Form.Item
 					name="password"
 					rules={[
 						{
 							required: true,
-							message: 'Please input your Password!'
+							message: '请输入您的密码'
 						}
 					]}
 				>
