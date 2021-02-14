@@ -2,7 +2,7 @@
  * @Author: Jinqi Li
  * @Date: 2021-02-13 02:54:09
  * @LastEditors: Jinqi Li
- * @LastEditTime: 2021-02-13 16:27:59
+ * @LastEditTime: 2021-02-13 18:08:08
  * @FilePath: /billow-website/pages/[id]/index.js
  */
 import React, { useState, useEffect } from 'react';
@@ -38,13 +38,12 @@ const Post = ({ post }) => {
 				>
 					<Meta title={post.title} description={post.userName} />
 				</Card>
-				<Card>
+				<Card className="post-text">
 					{post.images.map((item) => {
 						return (
 							<img
+								className="db-img"
 								key={item.public_id}
-								style={{ margin: '0 auto 1em auto', display: 'block' }}
-								width={200}
 								alt="post image"
 								src={item.url}
 							/>

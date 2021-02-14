@@ -133,24 +133,47 @@ a.menu-bottom-link {
 } */
 
 /* homeCarousel.js */
+@media (min-width: 1200px) {
+	h3.carousel-text {
+		height: calc(60vw * .5);
+		width: 60%;
+	}
+	img.carousel-img {
+		height: calc(60vw * .5);
+		width: 100%;
+	}
+}
+@media (min-width: 700px) and (max-width: 1200px) {
+	h3.carousel-text {
+		height: calc(80vw * .5);
+		width: 80%;
+	}
+	img.carousel-img {
+		height: calc(80vw * .5);
+		width: 100%;
+	}
+}
+@media (max-width: 700px) {
+	h3.carousel-text,
+	img.carousel-img {
+		height: calc(100vw * .5);
+		width: 100%;
+	}
+}
 h3.carousel-text {
-	height: calc(100vw * .5);
-	width: 100%;
 	color: #fff;
 	line-height: 180px;
 	text-align: center;
-	background-color: #d9d9d9;
-	margin: 0;
+	background-color: rgba(255, 255, 255, 0);
+	margin: 0 auto;
 }
 div.ant-carousel {
-	background-color: #d9d9d9;
+	background-color: rgba(255, 255, 255, 0);
 	margin: 5px 5px 15px 5px;
 	border-radius: 5px;
-	box-shadow: 1px 1px 0.02px rgba(0, 0, 0, 0.1);
+	/* box-shadow: 1px 1px 0.02px rgba(0, 0, 0, 0.1); */
 }
 img.carousel-img {
-	height: calc(100vw * .5);
-	width: 100%;
 	border-radius: 5px;
 }
 
@@ -212,9 +235,9 @@ h1.intro-title {
 
 /* posts/1.js */
 div.post-content {
-	div.ant-card.ant-card-bordered:nth-child(2) {
+	/* div.ant-card.ant-card-bordered:nth-child(2) {
 		margin: 10px auto 10px auto;
-	}
+	} */
 }
 .ant-card-meta-title {
 	white-space: normal !important;
@@ -364,8 +387,36 @@ img.image-thumbnail {
 }
 
 /* database */
-img.db-img {
-	margin: 0 auto 1em auto;
-	display: block;
-	width: 100%;
+@media (min-width: 1000px) {
+	img.db-img {
+		margin: 0 auto 1em auto;
+		display: block;
+		width: 60%;
+	}
+	.post-text {
+		margin: 0 auto !important;
+		width: 70%;
+	}
+}
+@media (min-width: 600px) and (max-width: 1000px) {
+	img.db-img {
+		margin: 0 auto 1em auto;
+		display: block;
+		width: 80%;
+	}
+	.post-text {
+		margin: 0 auto !important;
+		width: 80%;
+	}
+}
+@media (max-width: 600px) {
+	img.db-img {
+		margin: 0 auto 1em auto;
+		display: block;
+		width: 100%;
+	}
+	.post-text {
+		margin: 0 auto !important;
+		width: 90%;
+	}
 }
