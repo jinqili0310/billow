@@ -2,7 +2,7 @@
  * @Author: Jinqi Li
  * @Date: 2021-02-09 02:00:20
  * @LastEditors: Jinqi Li
- * @LastEditTime: 2021-02-11 09:17:03
+ * @LastEditTime: 2021-02-13 16:24:16
  * @FilePath: /billow-website/components/pageFooter.js
  */
 import React from 'react';
@@ -18,6 +18,12 @@ export default function PageFooter() {
 			<Row gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }}>
 				<Col className="gutter-row" span={24}>
 					<Icon component={LogoW} className="footer-logo" />
+					<p className="footer-text">
+						Billow is a social network and professional development platform, aiming to connect talents,
+						elite professional, and share thoughts. Billow is developed from Seattle Lang Group which was
+						founded in June 2018. Seattle lang group is with floating elite 500 members but Billow is open
+						to everyone.
+					</p>
 					<h3 className="footer-follow">关注我们</h3>
 				</Col>
 			</Row>

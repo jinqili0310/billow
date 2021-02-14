@@ -2,7 +2,7 @@
  * @Author: Jinqi Li
  * @Date: 2021-02-04 01:11:11
  * @LastEditors: Jinqi Li
- * @LastEditTime: 2021-02-13 10:43:47
+ * @LastEditTime: 2021-02-13 16:27:36
  * @FilePath: /billow-website/pages/investment/index.js
  */
 import React from 'react';

@@ -2,7 +2,7 @@
  * @Author: Jinqi Li
  * @Date: 2021-02-04 01:12:07
  * @LastEditors: Jinqi Li
- * @LastEditTime: 2021-02-13 10:45:27
+ * @LastEditTime: 2021-02-13 16:27:46
  * @FilePath: /billow-website/pages/career/index.js
  */
 import React from 'react';

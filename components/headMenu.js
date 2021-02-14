@@ -2,7 +2,7 @@
  * @Author: Jinqi Li
  * @Date: 2021-02-03 21:53:11
  * @LastEditors: Jinqi Li
- * @LastEditTime: 2021-02-13 09:10:23
+ * @LastEditTime: 2021-02-13 16:28:29
  * @FilePath: /billow-website/components/headMenu.js
  */
 import React from 'react';
@@ -71,7 +71,7 @@ export default function HeadMenu() {
 				<Table className="menu-table" dataSource={dataSrc} columns={columns} />
 			</div>
 			<div className="menu-bottom">
-				<a className="menu-bottom-link" href="#aboutUs">
+				<a className="menu-bottom-link" href="/#aboutUs">
 					关于我们
 				</a>
 				<a className="menu-bottom-link" onClick={openWindow}>

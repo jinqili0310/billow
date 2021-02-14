@@ -2,7 +2,7 @@
  * @Author: Jinqi Li
  * @Date: 2021-02-04 01:10:51
  * @LastEditors: Jinqi Li
- * @LastEditTime: 2021-02-13 11:04:56
+ * @LastEditTime: 2021-02-13 16:27:20
  * @FilePath: /billow-website/pages/food/index.js
  */
 import React from 'react';
@@ -44,7 +44,6 @@ const Food = ({ posts }) => {
 					);
 				})}
 			</div>
-			
 		</React.Fragment>
 	);
 };
