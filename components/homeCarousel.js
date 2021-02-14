@@ -2,7 +2,7 @@
  * @Author: Jinqi Li
  * @Date: 2021-02-04 01:08:07
  * @LastEditors: Jinqi Li
- * @LastEditTime: 2021-02-13 18:13:58
+ * @LastEditTime: 2021-02-13 18:47:45
  * @FilePath: /billow-website/components/homeCarousel.js
  */
 import React from 'react';
@@ -20,14 +20,14 @@ export default function HomeCarousel() {
 				</a>
 			</div>
 			<div>
-				<a href="/invest">
+				<a href="/investment">
 				<h3 className="carousel-text" >
 				<img src='/invest.jpg' alt="billow invest" className="carousel-img"/>
 				</h3>
 				</a>
 			</div>
 			<div>
-				<a href="/growth">
+				<a href="/career">
 				<h3 className="carousel-text" >
 				<img src='/growth.jpg' alt="billow growth" className="carousel-img"/>
 				</h3>
@@ -48,7 +48,7 @@ export default function HomeCarousel() {
 				</a>
 			</div>
 			<div>
-				<a href="/show">
+				<a href="/talentShow">
 				<h3 className="carousel-text" >
 				<img src='/show.jpg' alt="billow show" className="carousel-img"/>
 				</h3>
