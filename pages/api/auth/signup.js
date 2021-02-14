@@ -2,8 +2,8 @@
  * @Author: Jinqi Li
  * @Date: 2021-02-13 06:49:57
  * @LastEditors: Jinqi Li
- * @LastEditTime: 2021-02-13 09:30:14
- * @FilePath: /billow-website/pages/api/auth/register.js
+ * @LastEditTime: 2021-02-13 16:38:49
+ * @FilePath: /billow-website/pages/api/auth/signup.js
  */
 import dbConnect from '../../../utils/dbConnect';
 import User from '../../../models/User';
@@ -21,7 +21,7 @@ export default async (req, res) => {
 
 const register = async (req, res) => {
 	try {
-		const { username, email, password, location, phone } = req.body;
+		const { userName, email, password, location, phone } = req.body;
 
 		const user = await User.findOne({ email });
 		if (user) return res.status(400).json({ err: '此邮箱已被注册' });
@@ -29,7 +29,7 @@ const register = async (req, res) => {
 		const passwordHash = await bcrypt.hash(password, 12);
 
 		const newUser = new User({
-			username,
+			userName,
 			email,
 			password: passwordHash,
 			location,

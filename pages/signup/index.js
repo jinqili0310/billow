@@ -2,7 +2,7 @@
  * @Author: Jinqi Li
  * @Date: 2021-02-04 01:09:53
  * @LastEditors: Jinqi Li
- * @LastEditTime: 2021-02-13 11:48:16
+ * @LastEditTime: 2021-02-13 16:39:52
  * @FilePath: /billow-website/pages/signup/index.js
  */
 import React, { useState, useContext, useEffect } from 'react';
@@ -157,7 +157,7 @@ export default function Signup() {
 				</Form.Item>
 
 				<Form.Item
-					name="username"
+					name="userName"
 					label="用户名"
 					rules={[
 						{

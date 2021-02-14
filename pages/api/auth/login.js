@@ -2,7 +2,7 @@
  * @Author: Jinqi Li
  * @Date: 2021-02-13 09:37:47
  * @LastEditors: Jinqi Li
- * @LastEditTime: 2021-02-13 09:42:13
+ * @LastEditTime: 2021-02-13 16:38:29
  * @FilePath: /billow-website/pages/api/auth/login.js
  */
 import dbConnect from '../../../utils/dbConnect';
@@ -38,7 +38,7 @@ const login = async (req, res) => {
 			refresh_token,
 			access_token,
 			user: {
-				username: user.username,
+				userName: user.userName,
 				email: user.email,
 				role: user.role
 			}

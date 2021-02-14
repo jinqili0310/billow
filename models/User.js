@@ -2,14 +2,14 @@
  * @Author: Jinqi Li
  * @Date: 2021-02-13 05:44:44
  * @LastEditors: Jinqi Li
- * @LastEditTime: 2021-02-13 13:51:05
+ * @LastEditTime: 2021-02-13 16:41:17
  * @FilePath: /billow-website/models/User.js
  */
 const mongoose = require('mongoose');
 
 const UserSchema = new mongoose.Schema(
 	{
-		username: {
+		userName: {
 			type: String,
 			required: true
 		},
