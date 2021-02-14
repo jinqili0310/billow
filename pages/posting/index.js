@@ -2,7 +2,7 @@
  * @Author: Jinqi Li
  * @Date: 2021-02-04 14:27:33
  * @LastEditors: Jinqi Li
- * @LastEditTime: 2021-02-13 18:37:10
+ * @LastEditTime: 2021-02-13 19:17:57
  * @FilePath: /billow-website/pages/posting/index.js
  */
 import React, { useState, useEffect, useContext } from 'react';
@@ -53,7 +53,7 @@ export default function Posting() {
 
 	const createPost = async () => {
 		try {
-			console.log(form)
+			console.log(form);
 			const res = await fetch(`${server}/api/posts`, {
 				method: 'POST',
 				headers: {
@@ -215,7 +215,7 @@ export default function Posting() {
 						<Form.Button className="post-action" fluid type="submit">
 							发 布
 						</Form.Button>
-						<Form.Button className="post-action" fluid type="cancel">
+						<Form.Button className="post-action" onClick={() => router.push('/')} fluid type="cancel">
 							取 消
 						</Form.Button>
 					</Form.Group>
