@@ -345,6 +345,21 @@ div.post-btn {
 	font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans,
 		Helvetica Neue, sans-serif !important;
 }
+.ui.pointing.above.prompt.label {
+	border: none !important;
+	color: #ff4d4f !important;
+}
+.ui.form .field.error .ui.dropdown,
+.ui.form .field.error input[type=text],
+.ui.form .field.error textarea {
+	color: #ff4d4f !important;
+	border-color: #ff4d4f !important;
+	background-color: #fff !important;
+}
+.ui.pointing.label:before,
+.ui[class*="pointing above"].label:before {
+	display: none;
+}
 .image-upload {
 	max-width: 100%;
 }
