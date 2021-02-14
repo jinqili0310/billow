@@ -2,24 +2,14 @@
  * @Author: Jinqi Li
  * @Date: 2021-02-13 10:01:06
  * @LastEditors: Jinqi Li
- * @LastEditTime: 2021-02-13 11:46:03
+ * @LastEditTime: 2021-02-13 17:10:55
  * @FilePath: /billow-website/store/globalState.js
  */
 import React, { createContext, useReducer, useEffect } from 'react';
 import reducers from './Reducers';
 import { getData } from '../utils/fetchData';
 
-const defaultState = {
-	notify: {},
-	auth: {},
-	cart: [],
-	modal: [],
-	orders: [],
-	users: [],
-	categories: []
-};
-
-export const DataContext = createContext(defaultState);
+export const DataContext = createContext();
 
 export const DataProvider = ({ children }) => {
 	const initialState = {
@@ -28,7 +18,7 @@ export const DataProvider = ({ children }) => {
 		cart: [],
 		modal: [],
 		orders: [],
-		users: [],
+		user: [],
 		categories: []
 	};
 
@@ -39,7 +29,10 @@ export const DataProvider = ({ children }) => {
 		const firstLogin = localStorage.getItem('firstLogin');
 		if (firstLogin) {
 			getData('auth/accessToken').then((res) => {
-				if (res.err) return localStorage.removeItem('firstLogin');
+				if (res.err) {
+					console.log(res.err, res.access_token, res)
+					return localStorage.removeItem('firstLogin');
+				}
 				dispatch({
 					type: 'AUTH',
 					payload: {
@@ -50,52 +43,7 @@ export const DataProvider = ({ children }) => {
 			});
 		}
 
-		getData('categories').then((res) => {
-			if (res.err) return dispatch({ type: 'NOTIFY', payload: { error: res.err } });
-
-			dispatch({
-				type: 'ADD_CATEGORIES',
-				payload: res.categories
-			});
-		});
 	}, []);
-
-	useEffect(() => {
-		const __next__cart01__devat = JSON.parse(localStorage.getItem('__next__cart01__devat'));
-
-		if (__next__cart01__devat) dispatch({ type: 'ADD_CART', payload: __next__cart01__devat });
-	}, []);
-
-	useEffect(
-		() => {
-			localStorage.setItem('__next__cart01__devat', JSON.stringify(cart));
-		},
-		[ cart ]
-	);
-
-	useEffect(
-		() => {
-			if (auth.token) {
-				getData('order', auth.token).then((res) => {
-					if (res.err) return dispatch({ type: 'NOTIFY', payload: { error: res.err } });
-
-					dispatch({ type: 'ADD_ORDERS', payload: res.orders });
-				});
-
-				if (auth.user.role === 'admin') {
-					getData('user', auth.token).then((res) => {
-						if (res.err) return dispatch({ type: 'NOTIFY', payload: { error: res.err } });
-
-						dispatch({ type: 'ADD_USERS', payload: res.users });
-					});
-				}
-			} else {
-				dispatch({ type: 'ADD_ORDERS', payload: [] });
-				dispatch({ type: 'ADD_USERS', payload: [] });
-			}
-		},
-		[ auth.token ]
-	);
 
 	return <DataContext.Provider value={{ state, dispatch }}>{children}</DataContext.Provider>;
 };

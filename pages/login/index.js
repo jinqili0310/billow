@@ -2,7 +2,7 @@
  * @Author: Jinqi Li
  * @Date: 2021-02-04 01:10:06
  * @LastEditors: Jinqi Li
- * @LastEditTime: 2021-02-13 16:33:19
+ * @LastEditTime: 2021-02-13 17:19:53
  * @FilePath: /billow-website/pages/login/index.js
  */
 import React, { useState, useContext, useEffect } from 'react';
@@ -32,7 +32,6 @@ export default function Login() {
 				user: res.user
 			}
 		});
-		router.push('/');
 
 		Cookie.set('refreshtoken', res.refresh_token, {
 			path: 'api/auth/accessToken',

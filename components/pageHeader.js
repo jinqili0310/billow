@@ -2,7 +2,7 @@
  * @Author: Jinqi Li
  * @Date: 2021-02-03 21:50:21
  * @LastEditors: Jinqi Li
- * @LastEditTime: 2021-02-13 11:47:19
+ * @LastEditTime: 2021-02-13 17:18:24
  * @FilePath: /billow-website/components/pageHeader.js
  */
 import React, { useState, useContext } from 'react';
@@ -21,7 +21,6 @@ function PageHeader() {
 	const { auth } = state;
 
 	const handleLogout = () => {
-		e.preventDefault();
 		Cookie.remove('refreshtoken', { path: 'api/auth/accessToken' });
 		localStorage.removeItem('firstLogin');
 		dispatch({ type: 'AUTH', payload: {} });

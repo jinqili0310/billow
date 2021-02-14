@@ -2,7 +2,7 @@
  * @Author: Jinqi Li
  * @Date: 2021-02-13 05:52:18
  * @LastEditors: Jinqi Li
- * @LastEditTime: 2021-02-13 05:53:27
+ * @LastEditTime: 2021-02-13 17:16:46
  * @FilePath: /billow-website/utils/fetchData.js
  */
 import { server } from '../config/index';
@@ -30,6 +30,7 @@ export const postData = async (url, post, token) => {
 	});
 
 	const data = await res.json();
+	console.log(data)
 	return data;
 };
 
