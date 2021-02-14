@@ -2,7 +2,7 @@
  * @Author: Jinqi Li
  * @Date: 2021-02-04 01:09:53
  * @LastEditors: Jinqi Li
- * @LastEditTime: 2021-02-13 18:28:41
+ * @LastEditTime: 2021-02-13 18:34:59
  * @FilePath: /billow-website/pages/signup/index.js
  */
 import React, { useState, useContext, useEffect } from 'react';
@@ -52,6 +52,7 @@ const tailFormItemLayout = {
 export default function Signup() {
 	const [ form ] = Form.useForm();
 	const router = useRouter();
+	const signErr = {};
 
 	const { state, dispatch } = useContext(DataContext);
 	const { auth } = state;
@@ -64,13 +65,14 @@ export default function Signup() {
 			setIsSubmitting(true);
 		} catch (error) {
 			console.log(error);
+			signErr = error;
 		}
 	};
 
 	useEffect(
 		() => {
 			if (isSubmitting) {
-				if (Object.keys(auth).length !== 0) router.push('/login');
+				if (!signErr || Object.keys(auth).length !== 0) router.push('/login');
 			} else {
 				setIsSubmitting(false);
 			}

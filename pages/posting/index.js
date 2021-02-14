@@ -2,7 +2,7 @@
  * @Author: Jinqi Li
  * @Date: 2021-02-04 14:27:33
  * @LastEditors: Jinqi Li
- * @LastEditTime: 2021-02-13 11:59:14
+ * @LastEditTime: 2021-02-13 18:37:10
  * @FilePath: /billow-website/pages/posting/index.js
  */
 import React, { useState, useEffect, useContext } from 'react';
