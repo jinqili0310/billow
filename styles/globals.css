@@ -134,7 +134,8 @@ a.menu-bottom-link {
 
 /* homeCarousel.js */
 h3.carousel-text {
-	height: 180px;
+	height: calc(100vw * .5);
+	width: 100%;
 	color: #fff;
 	line-height: 180px;
 	text-align: center;
@@ -148,7 +149,7 @@ div.ant-carousel {
 	box-shadow: 1px 1px 0.02px rgba(0, 0, 0, 0.1);
 }
 img.carousel-img {
-	height: 180px;
+	height: calc(100vw * .5);
 	width: 100%;
 	border-radius: 5px;
 }
