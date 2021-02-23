@@ -2,7 +2,7 @@
  * @Author: Jinqi Li
  * @Date: 2021-02-13 02:54:09
  * @LastEditors: Jinqi Li
- * @LastEditTime: 2021-02-13 18:08:08
+ * @LastEditTime: 2021-02-22 22:48:06
  * @FilePath: /billow-website/pages/[id]/index.js
  */
 import React, { useState, useEffect } from 'react';
@@ -13,8 +13,6 @@ import { server } from '../../config';
 import 'antd/dist/antd.css';
 import { Card, Avatar, Comment, Tooltip, List, Input, Form, Button } from 'antd';
 import { ShareAltOutlined, EllipsisOutlined, CommentOutlined } from '@ant-design/icons';
-import moment from 'moment';
-import reqwest from 'reqwest';
 import PageHeader from '../../components/pageHeader';
 
 const { Meta } = Card;

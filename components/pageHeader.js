@@ -2,43 +2,53 @@
  * @Author: Jinqi Li
  * @Date: 2021-02-03 21:50:21
  * @LastEditors: Jinqi Li
- * @LastEditTime: 2021-02-13 17:18:24
+ * @LastEditTime: 2021-02-22 23:54:18
  * @FilePath: /billow-website/components/pageHeader.js
  */
-import React, { useState, useContext } from 'react';
+import React, { useState, useEffect } from 'react';
 import 'antd/dist/antd.css';
 import Image from 'next/image';
 import HeadMenu from './headMenu';
-import { MenuOutlined } from '@ant-design/icons';
-import { Affix } from 'antd';
+import Icon, { MenuOutlined } from '@ant-design/icons';
+import { Affix, Row, Col } from 'antd';
 import { useRouter } from 'next/router';
-import { DataContext } from '../store/GlobalState';
-import Cookie from 'js-cookie';
+import { useUser } from '@auth0/nextjs-auth0';
+import Meishi from '../public/meishi.svg';
+import Meigu from '../public/meigu.svg';
+import Dushu from '../public/dushu.svg';
+import Huwai from '../public/huwai.svg';
+import Sheying from '../public/sheying.svg';
+import Caiyi from '../public/caiyi.svg';
+
+function useWindowSize() {
+	const [ windowSize, setWindowSize ] = useState({
+		width: undefined,
+		height: undefined
+	});
+
+	useEffect(() => {
+		if (typeof window !== 'undefined') {
+			function handleResize() {
+				setWindowSize({
+					width: window.innerWidth,
+					height: window.innerHeight
+				});
+			}
+
+			window.addEventListener('resize', handleResize);
+
+			handleResize();
+
+			return () => window.removeEventListener('resize', handleResize);
+		}
+	}, []);
+	return windowSize;
+}
 
 function PageHeader() {
+	const size = useWindowSize();
+	const { user, error, isLoading } = useUser();
 	const router = useRouter();
-	const { state, dispatch } = useContext(DataContext);
-	const { auth } = state;
-
-	const handleLogout = () => {
-		Cookie.remove('refreshtoken', { path: 'api/auth/accessToken' });
-		localStorage.removeItem('firstLogin');
-		dispatch({ type: 'AUTH', payload: {} });
-		return router.push('/');
-	};
-
-	const loggedRouter = () => {
-		return (
-			<span>
-				<a onClick={handleLogout} className="link">
-					登出
-				</a>
-				<a href="/posting" className="link">
-					发布文章
-				</a>
-			</span>
-		);
-	};
 
 	const [ menuOpen, setMenuOpen ] = useState(false);
 	const [ isOpen, setIsOpen ] = useState(false);
@@ -57,24 +67,74 @@ function PageHeader() {
 
 	return (
 		<Affix offsetTop={top} className="page-header">
-			<MenuOutlined className="menu-icon" onClick={openMenu} />
-			<a href="/">
+			{size.width <= 910 ? <MenuOutlined className="menu-icon" onClick={openMenu} /> : null}
+
+			<a className="nav-logo" href="/">
 				<Image src="/logo.png" alt="billow" width="30" height="30" />
 			</a>
 			<a href="/">
 				<h1 className="company">Billow</h1>
 			</a>
-			{Object.keys(auth).length === 0 ? (
+			{size.width > 910 ? (
+				<div className="nav-gutter">
+					<span className="hover-div">
+						<a href="/food" className="nav-link">
+							Food
+						</a>
+						<Icon component={Meishi} className="nav-icon" />
+					</span>
+					<span className="hover-div">
+						<a href="/investment" className="nav-link">
+							Investment
+						</a>
+						<Icon component={Meigu} className="nav-icon" />
+					</span>
+					<span className="hover-div">
+						<a href="/career" className="nav-link">
+							Career
+						</a>
+						<Icon component={Dushu} className="nav-icon" />
+					</span>
+					<span className="hover-div">
+						<a href="/outdoor" className="nav-link">
+							Outdoor
+						</a>
+						<Icon component={Huwai} className="nav-icon" />
+					</span>
+
+					<span className="hover-div">
+						<a href="/photography" className="nav-link">
+							Photography
+						</a>
+						<Icon component={Sheying} className="nav-icon" />
+					</span>
+
+					<span className="hover-div">
+						<a href="/talentShow" className="nav-link">
+							Talent Show
+						</a>
+						<Icon component={Caiyi} className="nav-icon" />
+					</span>
+				</div>
+			) : null}
+			{user ? (
 				<span>
-					<a href="/signup" className="link">
-						注册
+					<a href="/api/auth/logout" className="link">
+						Logout
 					</a>
-					<a href="/login" className="link">
-						登录
+					<a href="/posting" className="link">
+						Post
 					</a>
 				</span>
 			) : (
-				loggedRouter()
+				<span>
+					{/* <a href="/api/auth/signup" className="link">
+						注册
+					</a> */}
+					<a href="/api/auth/login" className="link">
+						Login / Signup
+					</a>
+				</span>
 			)}
 
 			{menuOpen ? <HeadMenu /> : null}

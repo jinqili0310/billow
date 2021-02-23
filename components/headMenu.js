@@ -2,7 +2,7 @@
  * @Author: Jinqi Li
  * @Date: 2021-02-03 21:53:11
  * @LastEditors: Jinqi Li
- * @LastEditTime: 2021-02-13 16:28:29
+ * @LastEditTime: 2021-02-22 23:47:11
  * @FilePath: /billow-website/components/headMenu.js
  */
 import React from 'react';
@@ -36,32 +36,32 @@ export default function HeadMenu() {
 		{
 			key: 1,
 			iconSrc: <Icon component={Meishi} className="custom-icon" />,
-			area: <a href="/food">美食</a>
+			area: <a href="/food">Food</a>
 		},
 		{
 			key: 2,
 			iconSrc: <Icon component={Meigu} className="custom-icon" />,
-			area: <a href="/investment">美股</a>
+			area: <a href="/investment">Investment</a>
 		},
 		{
 			key: 3,
 			iconSrc: <Icon component={Dushu} className="custom-icon" />,
-			area: <a href="/career">读书/职场</a>
+			area: <a href="/career">Career</a>
 		},
 		{
 			key: 4,
 			iconSrc: <Icon component={Huwai} className="custom-icon" />,
-			area: <a href="/outdoor">户外</a>
+			area: <a href="/outdoor">Outdoor</a>
 		},
 		{
 			key: 5,
 			iconSrc: <Icon component={Sheying} className="custom-icon" />,
-			area: <a href="/photography">摄影</a>
+			area: <a href="/photography">Photography</a>
 		},
 		{
 			key: 6,
 			iconSrc: <Icon component={Caiyi} className="custom-icon" />,
-			area: <a href="/talentShow">戏精才艺展示</a>
+			area: <a href="/talentShow">Talent Show</a>
 		}
 	];
 
@@ -72,10 +72,10 @@ export default function HeadMenu() {
 			</div>
 			<div className="menu-bottom">
 				<a className="menu-bottom-link" href="/#aboutUs">
-					关于我们
+					About Us
 				</a>
 				<a className="menu-bottom-link" onClick={openWindow}>
-					用户条款
+					Terms and Conditions
 				</a>
 			</div>
 		</div>

@@ -2,20 +2,20 @@
  * @Author: Jinqi Li
  * @Date: 2021-02-10 15:46:25
  * @LastEditors: Jinqi Li
- * @LastEditTime: 2021-02-13 15:32:45
+ * @LastEditTime: 2021-02-21 15:24:51
  * @FilePath: /billow-website/models/Post.js
  */
 const mongoose = require('mongoose');
 
 const PostSchema = new mongoose.Schema(
 	{
-		userName: {
+		username: {
 			type: String,
-			required: false
+			required: true
 		},
 		userId: {
 			type: String,
-			required: false
+			required: true
 		},
 		title: {
 			type: String,

@@ -2,12 +2,12 @@
  * @Author: Jinqi Li
  * @Date: 2021-02-04 14:27:33
  * @LastEditors: Jinqi Li
- * @LastEditTime: 2021-02-13 19:17:57
+ * @LastEditTime: 2021-02-21 15:25:09
  * @FilePath: /billow-website/pages/posting/index.js
  */
 import React, { useState, useEffect, useContext } from 'react';
 import Head from 'next/head';
-import 'antd/dist/antd.css';
+import '../talentShow/node_modules/antd/dist/antd.css';
 import { CloudUploadOutlined, DeleteOutlined } from '@ant-design/icons';
 import fetch from 'isomorphic-unfetch';
 import { useRouter } from 'next/router';
@@ -16,12 +16,10 @@ import PageHeader from '../../components/pageHeader';
 import { Form, Loader } from 'semantic-ui-react';
 import 'semantic-ui-css/semantic.min.css';
 import { imageUpload } from '../../utils/imageUpload';
-import { DataContext } from '../../store/GlobalState';
-import { postData, getData, putData } from '../../utils/fetchData';
+import { useUser } from '@auth0/nextjs-auth0';
 
 export default function Posting() {
-	const { state, dispatch } = useContext(DataContext);
-	const { auth } = state;
+	const { user } = useUser;
 
 	const tagChildren = [
 		{ key: 'food', text: '美食', value: 'food' },
@@ -80,7 +78,9 @@ export default function Posting() {
 
 		setForm({
 			...form,
-			images: [ ...imgOldURL, ...media ]
+			images: [...imgOldURL, ...media],
+			username: user.nickname,
+			userId: user._id
 		});
 
 		setIsSubmitting(true);

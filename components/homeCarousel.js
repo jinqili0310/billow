@@ -2,7 +2,7 @@
  * @Author: Jinqi Li
  * @Date: 2021-02-04 01:08:07
  * @LastEditors: Jinqi Li
- * @LastEditTime: 2021-02-13 18:47:45
+ * @LastEditTime: 2021-02-21 15:43:36
  * @FilePath: /billow-website/components/homeCarousel.js
  */
 import React from 'react';
