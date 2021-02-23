@@ -2,12 +2,12 @@
  * @Author: Jinqi Li
  * @Date: 2021-02-04 14:27:33
  * @LastEditors: Jinqi Li
- * @LastEditTime: 2021-02-21 15:25:09
+ * @LastEditTime: 2021-02-23 00:16:44
  * @FilePath: /billow-website/pages/posting/index.js
  */
 import React, { useState, useEffect, useContext } from 'react';
 import Head from 'next/head';
-import '../talentShow/node_modules/antd/dist/antd.css';
+import 'antd/dist/antd.css';
 import { CloudUploadOutlined, DeleteOutlined } from '@ant-design/icons';
 import fetch from 'isomorphic-unfetch';
 import { useRouter } from 'next/router';
