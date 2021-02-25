@@ -6,6 +6,7 @@
  * @FilePath: /billow-website/components/homeArea.js
  */
 import React from 'react';
+import 'antd/dist/antd.css';
 import HomeCard from './homeCard';
 
 export default function HomeArea(props) {

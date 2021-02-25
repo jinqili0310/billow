@@ -2,7 +2,7 @@
  * @Author: Jinqi Li
  * @Date: 2021-02-03 21:53:11
  * @LastEditors: Jinqi Li
- * @LastEditTime: 2021-02-22 23:47:11
+ * @LastEditTime: 2021-02-25 02:09:00
  * @FilePath: /billow-website/components/headMenu.js
  */
 import React from 'react';
@@ -70,14 +70,14 @@ export default function HeadMenu() {
 			<div className="menu-top">
 				<Table className="menu-table" dataSource={dataSrc} columns={columns} />
 			</div>
-			<div className="menu-bottom">
+			{/* <div className="menu-bottom">
 				<a className="menu-bottom-link" href="/#aboutUs">
 					About Us
 				</a>
 				<a className="menu-bottom-link" onClick={openWindow}>
 					Terms and Conditions
 				</a>
-			</div>
+			</div> */}
 		</div>
 	);
 }

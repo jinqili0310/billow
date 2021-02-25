@@ -2,7 +2,7 @@
  * @Author: Jinqi Li
  * @Date: 1985-10-26 01:15:00
  * @LastEditors: Jinqi Li
- * @LastEditTime: 2021-02-23 00:05:55
+ * @LastEditTime: 2021-02-25 00:51:12
  * @FilePath: /billow-website/pages/index.js
  */
 import React, { useState, useContext, useEffect } from 'react';
@@ -50,7 +50,7 @@ export default function Home() {
 			<PageHeader />
 			<div className="banner-div">
 				<Button className="join-btn">JOIN US</Button>
-				<Image className="banner-img" src="/banner.png" preview={false} />
+				{/* <Image className="banner-img" src="/banner.png" preview={false} /> */}
 			</div>
 			<Button />
 			<main className={styles.container}>
@@ -58,10 +58,12 @@ export default function Home() {
 				{size.width <= 800 ? (
 					<Row className="home-row-small">
 						<Col className="home-ant-card" span={24}>
-							<HomeArea title="美食" link="/food" cover={<Image src="/food0.jpg" />} />
+							<HomeArea title="美食" link="/food" cover={<Image src="/food1.png" />} />
 						</Col>
 						<Col className="small-text" span={24}>
-							<h3>FOOD</h3>
+							<a href="/food">
+								<h3>FOOD</h3>
+							</a>
 							<p>
 								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
 								incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
@@ -69,10 +71,12 @@ export default function Home() {
 							</p>
 						</Col>
 						<Col className="home-ant-card" span={24}>
-							<HomeArea title="美股" link="/investment" cover={<Image src="/invest0.jpg" />} />
+							<HomeArea title="美股" link="/investment" cover={<Image src="/invest1.png" />} />
 						</Col>
 						<Col className="small-text" span={24}>
-							<h3>INVESTMENT</h3>
+							<a href="/investment">
+								<h3>INVESTMENT</h3>
+							</a>
 							<p>
 								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
 								incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
@@ -80,10 +84,12 @@ export default function Home() {
 							</p>
 						</Col>
 						<Col className="home-ant-card" span={24}>
-							<HomeArea title="读书/职场" link="/career" cover={<Image src="/growth0.jpg" />} />
+							<HomeArea title="读书/职场" link="/career" cover={<Image src="/growth1.png" />} />
 						</Col>
 						<Col className="small-text" span={24}>
-							<h3>CAREER</h3>
+							<a href="/career">
+								<h3>CAREER</h3>
+							</a>
 							<p>
 								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
 								incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
@@ -91,10 +97,12 @@ export default function Home() {
 							</p>
 						</Col>
 						<Col className="home-ant-card" span={24}>
-							<HomeArea title="户外" link="/outdoor" cover={<Image src="/outdoor0.jpg" />} />
+							<HomeArea title="户外" link="/outdoor" cover={<Image src="/outdoor1.png" />} />
 						</Col>
 						<Col className="small-text" span={24}>
-							<h3>OUTDOOR</h3>
+							<a href="/outdoor">
+								<h3>OUTDOOR</h3>
+							</a>
 							<p>
 								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
 								incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
@@ -102,10 +110,12 @@ export default function Home() {
 							</p>
 						</Col>
 						<Col className="home-ant-card" span={24}>
-							<HomeArea title="摄影" link="/photography" cover={<Image src="/photography0.jpg" />} />
+							<HomeArea title="摄影" link="/photography" cover={<Image src="/photography1.png" />} />
 						</Col>
 						<Col className="small-text" span={24}>
-							<h3>PHOTOGRAPHY</h3>
+							<a href="/photography">
+								<h3>PHOTOGRAPHY</h3>
+							</a>
 							<p>
 								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
 								incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
@@ -113,10 +123,12 @@ export default function Home() {
 							</p>
 						</Col>
 						<Col className="home-ant-card" span={24}>
-							<HomeArea title="戏精才艺展示" link="/talentShow" cover={<Image src="/show0.jpg" />} />
+							<HomeArea title="戏精才艺展示" link="/talentShow" cover={<Image src="/show1.png" />} />
 						</Col>
 						<Col className="small-text" span={24}>
-							<h3>TALENT SHOW</h3>
+							<a href="/talentShow">
+								<h3>TALENT SHOW</h3>
+							</a>
 							<p>
 								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
 								incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
@@ -127,14 +139,12 @@ export default function Home() {
 				) : (
 					<Row className="large-row">
 						<Col className="large-col large-parent" span={12}>
-							<HomeArea
-								title="美食"
-								link="/food"
-								cover={<Image src="/food0.jpg" />}
-							/>
+							<HomeArea title="美食" link="/food" cover={<Image src="/food1.png" />} />
 						</Col>
 						<Col className="large-text" span={12}>
-							<h3>FOOD</h3>
+							<a href="/food">
+								<h3>FOOD</h3>
+							</a>
 							<p>
 								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
 								incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
@@ -145,7 +155,9 @@ export default function Home() {
 							</p>
 						</Col>
 						<Col className="large-text-even" span={12}>
-							<h3>INVESTMENT</h3>
+							<a href="/investment">
+								<h3>INVESTMENT</h3>
+							</a>
 							<p>
 								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
 								incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
@@ -156,21 +168,15 @@ export default function Home() {
 							</p>
 						</Col>
 						<Col className="large-col-even large-parent" span={12}>
-							<HomeArea
-								title="美股"
-								link="/investment"
-								cover={<Image src="/invest0.jpg" />}
-							/>
+							<HomeArea title="美股" link="/investment" cover={<Image src="/invest1.png" />} />
 						</Col>
 						<Col className="large-col large-parent" span={12}>
-							<HomeArea
-								title="读书/职场"
-								link="/career"
-								cover={<Image src="/growth0.jpg" />}
-							/>
+							<HomeArea title="读书/职场" link="/career" cover={<Image src="/growth1.png" />} />
 						</Col>
 						<Col className="large-text" span={12}>
-							<h3>CAREER</h3>
+							<a href="/career">
+								<h3>CAREER</h3>
+							</a>
 							<p>
 								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
 								incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
@@ -181,7 +187,9 @@ export default function Home() {
 							</p>
 						</Col>
 						<Col className="large-text-even" span={12}>
-							<h3>OUTDOOR</h3>
+							<a href="/outdoor">
+								<h3>OUTDOOR</h3>
+							</a>
 							<p>
 								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
 								incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
@@ -192,21 +200,15 @@ export default function Home() {
 							</p>
 						</Col>
 						<Col className="large-col-even large-parent" span={12}>
-							<HomeArea
-								title="户外"
-								link="/outdoor"
-								cover={<Image src="/outdoor0.jpg" />}
-							/>
+							<HomeArea title="户外" link="/outdoor" cover={<Image src="/outdoor1.png" />} />
 						</Col>
 						<Col className="large-col large-parent" span={12}>
-							<HomeArea
-								title="摄影"
-								link="/photography"
-								cover={<Image src="/photography0.jpg" />}
-							/>
+							<HomeArea title="摄影" link="/photography" cover={<Image src="/photography1.png" />} />
 						</Col>
 						<Col className="large-text" span={12}>
-							<h3>PHOTOGRAPHY</h3>
+							<a href="/photography">
+								<h3>PHOTOGRAPHY</h3>
+							</a>
 							<p>
 								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
 								incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
@@ -217,7 +219,9 @@ export default function Home() {
 							</p>
 						</Col>
 						<Col className="large-text-even" span={12}>
-							<h3>TALENT SHOW</h3>
+							<a href="/talentShow">
+								<h3>TALENT SHOW</h3>
+							</a>
 							<p>
 								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
 								incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
@@ -228,13 +232,8 @@ export default function Home() {
 							</p>
 						</Col>
 						<Col className="large-col-even large-parent" span={12}>
-							<HomeArea
-								title="戏精才艺展示"
-								link="/talentShow"
-								cover={<Image src="/show0.jpg" />}
-							/>
+							<HomeArea title="戏精才艺展示" link="/talentShow" cover={<Image src="/show1.png" />} />
 						</Col>
-						
 					</Row>
 				)}
 				{/* placeholders end */}

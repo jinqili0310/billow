@@ -2,7 +2,7 @@
  * @Author: Jinqi Li
  * @Date: 2021-02-03 21:50:21
  * @LastEditors: Jinqi Li
- * @LastEditTime: 2021-02-22 23:54:18
+ * @LastEditTime: 2021-02-25 02:21:18
  * @FilePath: /billow-website/components/pageHeader.js
  */
 import React, { useState, useEffect } from 'react';
@@ -67,56 +67,57 @@ function PageHeader() {
 
 	return (
 		<Affix offsetTop={top} className="page-header">
-			{size.width <= 910 ? <MenuOutlined className="menu-icon" onClick={openMenu} /> : null}
+			{size.width <= 1000 ? <MenuOutlined className="menu-icon" onClick={openMenu} /> : null}
 
 			<a className="nav-logo" href="/">
-				<Image src="/logo.png" alt="billow" width="30" height="30" />
+				<Image src="/logo.png" alt="billow" width="40" height="40" />
 			</a>
 			<a href="/">
-				<h1 className="company">Billow</h1>
+				<h1 className="company">I</h1>
 			</a>
-			{size.width > 910 ? (
+			{size.width > 1000 ? (
 				<div className="nav-gutter">
-					<span className="hover-div">
+					<a href="/food" className="hover-div">
 						<a href="/food" className="nav-link">
 							Food
 						</a>
 						<Icon component={Meishi} className="nav-icon" />
-					</span>
-					<span className="hover-div">
+					</a>
+					<a href="/investment" className="hover-div">
 						<a href="/investment" className="nav-link">
 							Investment
 						</a>
 						<Icon component={Meigu} className="nav-icon" />
-					</span>
-					<span className="hover-div">
+					</a>
+					<a href="/career" className="hover-div">
 						<a href="/career" className="nav-link">
 							Career
 						</a>
 						<Icon component={Dushu} className="nav-icon" />
-					</span>
-					<span className="hover-div">
+					</a>
+					<a href="/outdoor" className="hover-div">
 						<a href="/outdoor" className="nav-link">
 							Outdoor
 						</a>
 						<Icon component={Huwai} className="nav-icon" />
-					</span>
+					</a>
 
-					<span className="hover-div">
+					<a href="/photography" className="hover-div">
 						<a href="/photography" className="nav-link">
 							Photography
 						</a>
 						<Icon component={Sheying} className="nav-icon" />
-					</span>
+					</a>
 
-					<span className="hover-div">
+					<a href="/talentShow" className="hover-div">
 						<a href="/talentShow" className="nav-link">
 							Talent Show
 						</a>
 						<Icon component={Caiyi} className="nav-icon" />
-					</span>
+					</a>
 				</div>
 			) : null}
+
 			{user ? (
 				<span>
 					<a href="/api/auth/logout" className="link">
