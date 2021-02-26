@@ -257,7 +257,7 @@ div.nav-gutter {
 }
 .ant-image-mask {
 	border-radius: 2px;
-	display: none;
+	display: none !important;
 }
 .ant-image-mask-info {
 	display: none;
