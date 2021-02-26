@@ -2,7 +2,7 @@
  * @Author: Jinqi Li
  * @Date: 2021-02-04 01:08:07
  * @LastEditors: Jinqi Li
- * @LastEditTime: 2021-02-25 01:25:58
+ * @LastEditTime: 2021-02-25 23:59:26
  * @FilePath: /billow-website/components/homeCarousel.js
  */
 import React from 'react';
@@ -19,21 +19,21 @@ export default function HomeCarousel() {
 						<div>
 							<a href="/food">
 								<h3 className="carousel-text">
-									<img src="/food1.png" alt="billow food" className="carousel-img" />
+									<img src="/food1.jpg" alt="billow food" className="carousel-img" />
 								</h3>
 							</a>
 						</div>
 						<div>
 							<a href="/investment">
 								<h3 className="carousel-text">
-									<img src="/invest1.png" alt="billow investment" className="carousel-img" />
+									<img src="/invest1.jpg" alt="billow investment" className="carousel-img" />
 								</h3>
 							</a>
 						</div>
 						<div>
 							<a href="/career">
 								<h3 className="carousel-text">
-									<img src="/growth1.png" alt="billow career" className="carousel-img" />
+									<img src="/growth1.jpg" alt="billow career" className="carousel-img" />
 								</h3>
 							</a>
 						</div>
@@ -44,21 +44,21 @@ export default function HomeCarousel() {
 						<div>
 							<a href="/outdoor">
 								<h3 className="carousel-text">
-									<img src="/outdoor1.png" alt="billow outdoor" className="carousel-img" />
+									<img src="/outdoor1.jpg" alt="billow outdoor" className="carousel-img" />
 								</h3>
 							</a>
 						</div>
 						<div>
 							<a href="/photography">
 								<h3 className="carousel-text">
-									<img src="/photography1.png" alt="billow photography" className="carousel-img" />
+									<img src="/photography1.jpg" alt="billow photography" className="carousel-img" />
 								</h3>
 							</a>
 						</div>
 						<div>
 							<a href="/talentShow">
 								<h3 className="carousel-text">
-									<img src="/show1.png" alt="billow talent show" className="carousel-img" />
+									<img src="/show1.jpg" alt="billow talent show" className="carousel-img" />
 								</h3>
 							</a>
 						</div>

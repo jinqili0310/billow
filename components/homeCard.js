@@ -2,7 +2,7 @@
  * @Author: Jinqi Li
  * @Date: 2021-02-04 13:27:46
  * @LastEditors: Jinqi Li
- * @LastEditTime: 2021-02-21 16:58:53
+ * @LastEditTime: 2021-02-26 00:27:21
  * @FilePath: /billow-website/components/homeCard.js
  */
 import React from 'react';
@@ -16,7 +16,7 @@ export default function HomeCard(props) {
 	};
 	return (
 		<div  onClick={handleClick}>
-			<Card hoverable bordered={false} cover={props.cover} />
+			<Card hoverable={false} bordered={false} cover={props.cover} />
 		</div>
 	);
 }

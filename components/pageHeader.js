@@ -2,7 +2,7 @@
  * @Author: Jinqi Li
  * @Date: 2021-02-03 21:50:21
  * @LastEditors: Jinqi Li
- * @LastEditTime: 2021-02-25 02:21:18
+ * @LastEditTime: 2021-02-25 23:56:21
  * @FilePath: /billow-website/components/pageHeader.js
  */
 import React, { useState, useEffect } from 'react';
@@ -67,7 +67,7 @@ function PageHeader() {
 
 	return (
 		<Affix offsetTop={top} className="page-header">
-			{size.width <= 1000 ? <MenuOutlined className="menu-icon" onClick={openMenu} /> : null}
+			{size.width <= 980 ? <MenuOutlined className="menu-icon" onClick={openMenu} /> : null}
 
 			<a className="nav-logo" href="/">
 				<Image src="/logo.png" alt="billow" width="40" height="40" />
@@ -75,44 +75,44 @@ function PageHeader() {
 			<a href="/">
 				<h1 className="company">I</h1>
 			</a>
-			{size.width > 1000 ? (
+			{size.width > 980 ? (
 				<div className="nav-gutter">
 					<a href="/food" className="hover-div">
-						<a href="/food" className="nav-link">
+						<span className="nav-link">
 							Food
-						</a>
+						</span>
 						<Icon component={Meishi} className="nav-icon" />
 					</a>
 					<a href="/investment" className="hover-div">
-						<a href="/investment" className="nav-link">
+						<span className="nav-link">
 							Investment
-						</a>
+						</span>
 						<Icon component={Meigu} className="nav-icon" />
 					</a>
 					<a href="/career" className="hover-div">
-						<a href="/career" className="nav-link">
+						<span className="nav-link">
 							Career
-						</a>
+						</span>
 						<Icon component={Dushu} className="nav-icon" />
 					</a>
 					<a href="/outdoor" className="hover-div">
-						<a href="/outdoor" className="nav-link">
+						<span className="nav-link">
 							Outdoor
-						</a>
+						</span>
 						<Icon component={Huwai} className="nav-icon" />
 					</a>
 
 					<a href="/photography" className="hover-div">
-						<a href="/photography" className="nav-link">
+						<span className="nav-link">
 							Photography
-						</a>
+						</span>
 						<Icon component={Sheying} className="nav-icon" />
 					</a>
 
 					<a href="/talentShow" className="hover-div">
-						<a href="/talentShow" className="nav-link">
+						<span className="nav-link">
 							Talent Show
-						</a>
+						</span>
 						<Icon component={Caiyi} className="nav-icon" />
 					</a>
 				</div>

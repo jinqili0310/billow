@@ -2,7 +2,7 @@
  * @Author: Jinqi Li
  * @Date: 2021-02-03 21:53:11
  * @LastEditors: Jinqi Li
- * @LastEditTime: 2021-02-25 02:09:00
+ * @LastEditTime: 2021-02-25 23:46:08
  * @FilePath: /billow-website/components/headMenu.js
  */
 import React from 'react';
@@ -36,32 +36,32 @@ export default function HeadMenu() {
 		{
 			key: 1,
 			iconSrc: <Icon component={Meishi} className="custom-icon" />,
-			area: <a href="/food">Food</a>
+			area: <a href="/food" className="nav-link">Food</a>
 		},
 		{
 			key: 2,
 			iconSrc: <Icon component={Meigu} className="custom-icon" />,
-			area: <a href="/investment">Investment</a>
+			area: <a href="/investment" className="nav-link">Investment</a>
 		},
 		{
 			key: 3,
 			iconSrc: <Icon component={Dushu} className="custom-icon" />,
-			area: <a href="/career">Career</a>
+			area: <a href="/career" className="nav-link">Career</a>
 		},
 		{
 			key: 4,
 			iconSrc: <Icon component={Huwai} className="custom-icon" />,
-			area: <a href="/outdoor">Outdoor</a>
+			area: <a href="/outdoor" className="nav-link">Outdoor</a>
 		},
 		{
 			key: 5,
 			iconSrc: <Icon component={Sheying} className="custom-icon" />,
-			area: <a href="/photography">Photography</a>
+			area: <a href="/photography" className="nav-link">Photography</a>
 		},
 		{
 			key: 6,
 			iconSrc: <Icon component={Caiyi} className="custom-icon" />,
-			area: <a href="/talentShow">Talent Show</a>
+			area: <a href="/talentShow" className="nav-link">Talent Show</a>
 		}
 	];
 
