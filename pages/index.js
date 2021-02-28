@@ -2,7 +2,7 @@
  * @Author: Jinqi Li
  * @Date: 1985-10-26 01:15:00
  * @LastEditors: Jinqi Li
- * @LastEditTime: 2021-02-26 01:06:09
+ * @LastEditTime: 2021-02-28 11:47:42
  * @FilePath: /billow-website/pages/index.js
  */
 import React, { useState, useContext, useEffect } from 'react';
@@ -57,11 +57,12 @@ const Home = ({ posts }) => {
 				<link rel="preload" href="/Futura-Condensed-Extra-Bold.otf" as="font" crossOrigin="" />
 			</Head>
 			<PageHeader />
-			<div className="banner-div">
+			<HomeCarousel></HomeCarousel>
+			<Button className="join-btn">JOIN US</Button>
+			{/* <div className="banner-div">
 				<Button className="join-btn">JOIN US</Button>
-				{/* <Image className="banner-img" src="/banner.png" preview={false} /> */}
-			</div>
-			<Button />
+			</div> */}
+			{/* <Button /> */}
 			<main className={styles.container}>
 				{/* placeholders start */}
 				{size.width <= 800 ? (

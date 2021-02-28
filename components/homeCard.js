@@ -2,7 +2,7 @@
  * @Author: Jinqi Li
  * @Date: 2021-02-04 13:27:46
  * @LastEditors: Jinqi Li
- * @LastEditTime: 2021-02-26 00:27:21
+ * @LastEditTime: 2021-02-26 01:37:40
  * @FilePath: /billow-website/components/homeCard.js
  */
 import React from 'react';

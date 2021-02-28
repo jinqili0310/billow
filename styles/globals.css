@@ -67,7 +67,7 @@ div.banner-div {
 	position: absolute !important;
 	color: #fff !important;
 	border: none !important;
-	top: 340px;
+	top: 330px;
 	font-size: 30px !important;
 	line-height: 40px !important;
 	height: 50px !important;
@@ -99,12 +99,10 @@ div.banner-div {
 }
 .small-text > a,
 .large-text > a {
-	text-decoration: underline;
 	color: rgba(0, 0, 0, 0.85);
 }
 .small-text > a:hover h3,
 .large-text > a:hover h3{
-	text-decoration: underline;
 	color: #1890ff;
 }
 .home-row-small {
@@ -125,7 +123,6 @@ div.banner-div {
 .area-title {
 	font-family: "Futura";
 	font-size: 1.8rem;
-	text-decoration: underline;
 }
 h2.area-title {
 	font-size: 2.2rem;
@@ -355,36 +352,92 @@ a.menu-bottom-link {
 } */
 
 /* homeCarousel.js */
-h3.carousel-text,
-img.carousel-img {
-	width: 100%;
+.slider-div {
+	margin: 0 0 5% 0;
 }
-h3.carousel-text {
-	color: #fff;
-	line-height: 180px;
-	text-align: center;
-	background-color: rgba(255, 255, 255, 0);
+.cb-slideshow,
+.cb-slideshow:after { 
+    position: relative;
+    width: 100%;
+    height: 500px;
 }
-@media (min-width: 800px) {
-	div.ant-carousel {
-		margin: 0 5px 5% 5px;
-	}
+.cb-slideshow:after { 
+    content: '';
+    background: transparent repeat top left; 
 }
-@media (max-width: 800px) {
-	div.ant-carousel {
-		margin: 2% 2% 5% 2%;
-	}
+.cb-slideshow li:nth-child(1) span { 
+    background-image: url(/banner1.gif) 
 }
-div.ant-carousel {
-	background-color: rgba(255, 255, 255, 0);
-	border-radius: 5px;
-	/* box-shadow: 1px 1px 0.02px rgba(0, 0, 0, 0.1); */
+.cb-slideshow li:nth-child(2) span { 
+    background-image: url(/banner2.gif);
+    animation-delay: 5s; 
 }
-img.carousel-img {
-	border-radius: 5px;
+.cb-slideshow li:nth-child(3) span { 
+    background-image: url(/banner3.gif);
+    animation-delay: 10s; 
 }
-.carousel-row {
-	margin: 0 1%;
+.cb-slideshow li:nth-child(2) div { 
+    animation-delay: 5s; 
+}
+.cb-slideshow li:nth-child(3) div { 
+    animation-delay: 10s; 
+}
+@keyframes imageAnimation { 
+    0% { opacity: 0; animation-timing-function: ease-in;  }
+    8% { opacity: 1 ; animation-timing-function: ease-out }
+    20% { opacity: 1 }
+    40% { opacity: 0 }
+    100% { opacity: 0 }
+}
+.no-cssanimations .cb-slideshow li span{
+	opacity: 1;
+}
+@media screen and (max-width: 1140px) { 
+    .cb-slideshow li div h3 { font-size: 10px }
+}
+@media screen and (max-width: 600px) { 
+    .cb-slideshow li div h3 { font-size: 10px }
+}
+.cb-slideshow li span { 
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    color: transparent;
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: none;
+    opacity: 0;
+    z-index: 0;
+    animation: imageAnimation 15s linear infinite 0s; 
+}
+.cb-slideshow li div { 
+    z-index: 1000;
+    position: absolute;
+    bottom: 30px;
+    left: 0px;
+    width: 100%;
+    text-align: center;
+    opacity: 0;
+    color: #fff;
+    animation: titleAnimation 15s linear infinite 0s; 
+}
+.cb-slideshow li div h3 { 
+    font-size: 10px;
+    padding: 0;
+    line-height: 10px; 
+}
+@keyframes titleAnimation { 
+    0% { opacity: 0 }
+    8% { opacity: 0 }
+    17% { opacity: 0 }
+    19% { opacity: 0 }
+    100% { opacity: 0 }
+}
+.slider-div ::marker {
+	display: none;
+	content: "";
 }
 
 /* homeArea.js */
@@ -397,7 +450,6 @@ div.home-cards {
 }
 h3.card-title > a {
 	color: #707070 !important;
-	text-decoration: underline;
 	font-weight: bold;
 }
 

@@ -2,7 +2,7 @@
  * @Author: Jinqi Li
  * @Date: 2021-02-04 01:08:07
  * @LastEditors: Jinqi Li
- * @LastEditTime: 2021-02-25 23:59:26
+ * @LastEditTime: 2021-02-28 11:14:37
  * @FilePath: /billow-website/components/homeCarousel.js
  */
 import React from 'react';
@@ -12,60 +12,28 @@ import { Carousel, Row, Col } from 'antd';
 export default function HomeCarousel() {
 	return (
 		<React.Fragment>
-			<Row className="carousel-row">
-				<Col span={2} />
-				<Col span={10}>
-					<Carousel autoplay>
+			<div className="slider-div">
+				<ul class="cb-slideshow">
+					<li>
+						<span>Image 01</span>
 						<div>
-							<a href="/food">
-								<h3 className="carousel-text">
-									<img src="/food1.jpg" alt="billow food" className="carousel-img" />
-								</h3>
-							</a>
+							<h3>Image 01</h3>
 						</div>
+					</li>
+					<li>
+						<span>Image 02</span>
 						<div>
-							<a href="/investment">
-								<h3 className="carousel-text">
-									<img src="/invest1.jpg" alt="billow investment" className="carousel-img" />
-								</h3>
-							</a>
+							<h3>Image 02</h3>
 						</div>
+					</li>
+					<li>
+						<span>Image 03</span>
 						<div>
-							<a href="/career">
-								<h3 className="carousel-text">
-									<img src="/growth1.jpg" alt="billow career" className="carousel-img" />
-								</h3>
-							</a>
+							<h3>Image 03</h3>
 						</div>
-					</Carousel>
-				</Col>
-				<Col span={10}>
-					<Carousel autoplay>
-						<div>
-							<a href="/outdoor">
-								<h3 className="carousel-text">
-									<img src="/outdoor1.jpg" alt="billow outdoor" className="carousel-img" />
-								</h3>
-							</a>
-						</div>
-						<div>
-							<a href="/photography">
-								<h3 className="carousel-text">
-									<img src="/photography1.jpg" alt="billow photography" className="carousel-img" />
-								</h3>
-							</a>
-						</div>
-						<div>
-							<a href="/talentShow">
-								<h3 className="carousel-text">
-									<img src="/show1.jpg" alt="billow talent show" className="carousel-img" />
-								</h3>
-							</a>
-						</div>
-					</Carousel>
-				</Col>
-				<Col span={2} />
-			</Row>
+					</li>
+				</ul>
+			</div>
 		</React.Fragment>
 	);
 }
