@@ -532,7 +532,7 @@ div.post-content {
 .home-card {
 	width: 100%;
 }
-.ant-card-body {
+.home-cards .ant-card-body {
 	display: none;
 }
 .ant-image {

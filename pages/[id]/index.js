@@ -2,7 +2,7 @@
  * @Author: Jinqi Li
  * @Date: 2021-02-13 02:54:09
  * @LastEditors: Jinqi Li
- * @LastEditTime: 2021-02-22 22:48:06
+ * @LastEditTime: 2021-02-28 12:45:01
  * @FilePath: /billow-website/pages/[id]/index.js
  */
 import React, { useState, useEffect } from 'react';
@@ -27,6 +27,7 @@ const Post = ({ post }) => {
 			</Head>
 			<PageHeader />
 			<div className="post-content">
+				
 				<Card
 				// actions={[
 				// 	<CommentOutlined key="comment" />,
@@ -34,18 +35,11 @@ const Post = ({ post }) => {
 				// 	<EllipsisOutlined key="ellipsis" />
 				// ]}
 				>
-					<Meta title={post.title} description={post.userName} />
+					<Meta title={post.title} description={post.username} />
 				</Card>
 				<Card className="post-text">
 					{post.images.map((item) => {
-						return (
-							<img
-								className="db-img"
-								key={item.public_id}
-								alt="post image"
-								src={item.url}
-							/>
-						);
+						return <img className="db-img" key={item.public_id} alt="billow" src={item.url} />;
 					})}
 					<div dangerouslySetInnerHTML={{ __html: post.body }} />
 				</Card>
@@ -57,7 +51,6 @@ const Post = ({ post }) => {
 Post.getInitialProps = async ({ query: { id } }) => {
 	const res = await fetch(`${server}/api/posts/${id}`);
 	const { data } = await res.json();
-
 	return { post: data };
 };
 

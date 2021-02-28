@@ -2,7 +2,7 @@
  * @Author: Jinqi Li
  * @Date: 2021-02-03 21:50:21
  * @LastEditors: Jinqi Li
- * @LastEditTime: 2021-02-25 23:56:21
+ * @LastEditTime: 2021-02-28 12:35:11
  * @FilePath: /billow-website/components/pageHeader.js
  */
 import React, { useState, useEffect } from 'react';
@@ -12,7 +12,6 @@ import HeadMenu from './headMenu';
 import Icon, { MenuOutlined } from '@ant-design/icons';
 import { Affix, Row, Col } from 'antd';
 import { useRouter } from 'next/router';
-import { useUser } from '@auth0/nextjs-auth0';
 import Meishi from '../public/meishi.svg';
 import Meigu from '../public/meigu.svg';
 import Dushu from '../public/dushu.svg';
@@ -47,7 +46,6 @@ function useWindowSize() {
 
 function PageHeader() {
 	const size = useWindowSize();
-	const { user, error, isLoading } = useUser();
 	const router = useRouter();
 
 	const [ menuOpen, setMenuOpen ] = useState(false);
@@ -118,7 +116,7 @@ function PageHeader() {
 				</div>
 			) : null}
 
-			{user ? (
+			{/* {user ? ( */}
 				<span>
 					<a href="/api/auth/logout" className="link">
 						Logout
@@ -127,7 +125,7 @@ function PageHeader() {
 						Post
 					</a>
 				</span>
-			) : (
+			{/* ) : ( */}
 				<span>
 					{/* <a href="/api/auth/signup" className="link">
 						注册
@@ -136,7 +134,7 @@ function PageHeader() {
 						Login / Signup
 					</a>
 				</span>
-			)}
+			{/* )} */}
 
 			{menuOpen ? <HeadMenu /> : null}
 		</Affix>
