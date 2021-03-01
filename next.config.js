@@ -2,9 +2,11 @@
  * @Author: Jinqi Li
  * @Date: 2021-02-03 22:18:56
  * @LastEditors: Jinqi Li
- * @LastEditTime: 2021-02-22 20:05:14
+ * @LastEditTime: 2021-02-28 13:14:50
  * @FilePath: /billow-website/next.config.js
  */
+require('dotenv').config();
+
 module.exports = {
 	webpack: (config, { dev }) => {
 		config.module.rules.push(
@@ -44,9 +46,12 @@ module.exports = {
 	},
 
 	env: {
-		MONGO_URI:
-			'mongodb+srv://billow-admin:dtYb62vQKJKN6Q4@clusterbillow.zl3li.mongodb.net/billowDB?retryWrites=true&w=majority',
-
-		CLOUD_API: 'https://v1.nocodeapi.com/jinqili/cloudinary/ihYCGJsCpaNHyPfy'
+		MONGODB_URI: process.env.MONGODB_URI,
+		CLOUDINARY_URL: process.env.CLOUDINARY_URL,
+		DB_NAME: process.env.DB_NAME,
+		WEB_URI: process.env.WEB_URI,
+		SENDGRID_API_KEY: process.env.SENDGRID_API_KEY,
+		EMAIL_FROM: process.env.EMAIL_FROM,
+		SESSION_SECRET: process.env.SESSION_SECRET
 	}
 };

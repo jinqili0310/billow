@@ -2,7 +2,7 @@
  * @Author: Jinqi Li
  * @Date: 2021-02-04 01:08:07
  * @LastEditors: Jinqi Li
- * @LastEditTime: 2021-02-28 11:14:37
+ * @LastEditTime: 2021-02-28 17:30:22
  * @FilePath: /billow-website/components/homeCarousel.js
  */
 import React from 'react';
@@ -13,7 +13,7 @@ export default function HomeCarousel() {
 	return (
 		<React.Fragment>
 			<div className="slider-div">
-				<ul class="cb-slideshow">
+				<ul className="cb-slideshow">
 					<li>
 						<span>Image 01</span>
 						<div>

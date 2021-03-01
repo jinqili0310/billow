@@ -259,6 +259,18 @@ div.nav-gutter {
 .ant-image-mask-info {
 	display: none;
 }
+.logout-btn {
+	border: none !important;
+	padding: 0 !important;
+	float: right;
+}
+.logout-btn span {
+	color: #000;
+	text-decoration: underline;
+	margin: 1.5em 1em 0 0;
+	float: right;
+	font-size: 1.2rem;
+}
 /* .large-parent:nth-child(1) .ant-image-mask::after {
 	content: "Food";
 }
@@ -532,7 +544,7 @@ div.post-content {
 .home-card {
 	width: 100%;
 }
-.home-cards .ant-card-body {
+.home-cards .ant-card-body, .fetch-post .ant-card-body {
 	display: none;
 }
 .ant-image {

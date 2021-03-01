@@ -2,7 +2,7 @@
  * @Author: Jinqi Li
  * @Date: 2021-02-13 02:54:09
  * @LastEditors: Jinqi Li
- * @LastEditTime: 2021-02-28 12:45:01
+ * @LastEditTime: 2021-02-28 16:17:45
  * @FilePath: /billow-website/pages/[id]/index.js
  */
 import React, { useState, useEffect } from 'react';
@@ -14,6 +14,7 @@ import 'antd/dist/antd.css';
 import { Card, Avatar, Comment, Tooltip, List, Input, Form, Button } from 'antd';
 import { ShareAltOutlined, EllipsisOutlined, CommentOutlined } from '@ant-design/icons';
 import PageHeader from '../../components/pageHeader';
+import Posts from '../../components/posts'
 
 const { Meta } = Card;
 const { TextArea } = Input;
@@ -27,8 +28,8 @@ const Post = ({ post }) => {
 			</Head>
 			<PageHeader />
 			<div className="post-content">
-				
-				<Card
+				<Posts></Posts>
+				{/* <Card
 				// actions={[
 				// 	<CommentOutlined key="comment" />,
 				// 	<ShareAltOutlined key="share" />,
@@ -42,16 +43,10 @@ const Post = ({ post }) => {
 						return <img className="db-img" key={item.public_id} alt="billow" src={item.url} />;
 					})}
 					<div dangerouslySetInnerHTML={{ __html: post.body }} />
-				</Card>
+				</Card> */}
 			</div>
 		</React.Fragment>
 	);
-};
-
-Post.getInitialProps = async ({ query: { id } }) => {
-	const res = await fetch(`${server}/api/posts/${id}`);
-	const { data } = await res.json();
-	return { post: data };
 };
 
 export default Post;

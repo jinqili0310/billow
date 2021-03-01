@@ -2,7 +2,7 @@
  * @Author: Jinqi Li
  * @Date: 2021-02-03 21:50:21
  * @LastEditors: Jinqi Li
- * @LastEditTime: 2021-02-28 12:35:11
+ * @LastEditTime: 2021-02-28 17:37:46
  * @FilePath: /billow-website/components/pageHeader.js
  */
 import React, { useState, useEffect } from 'react';
@@ -10,7 +10,7 @@ import 'antd/dist/antd.css';
 import Image from 'next/image';
 import HeadMenu from './headMenu';
 import Icon, { MenuOutlined } from '@ant-design/icons';
-import { Affix, Row, Col } from 'antd';
+import { Affix, Row, Col, Button } from 'antd';
 import { useRouter } from 'next/router';
 import Meishi from '../public/meishi.svg';
 import Meigu from '../public/meigu.svg';
@@ -18,6 +18,7 @@ import Dushu from '../public/dushu.svg';
 import Huwai from '../public/huwai.svg';
 import Sheying from '../public/sheying.svg';
 import Caiyi from '../public/caiyi.svg';
+import { useCurrentUser } from '../hooks/index';
 
 function useWindowSize() {
 	const [ windowSize, setWindowSize ] = useState({
@@ -63,6 +64,14 @@ function PageHeader() {
 		}
 	};
 
+	const [ user, { mutate } ] = useCurrentUser();
+	const handleLogout = async () => {
+		await fetch('/api/auth', {
+			method: 'DELETE'
+		});
+		mutate(null);
+	};
+
 	return (
 		<Affix offsetTop={top} className="page-header">
 			{size.width <= 980 ? <MenuOutlined className="menu-icon" onClick={openMenu} /> : null}
@@ -76,65 +85,53 @@ function PageHeader() {
 			{size.width > 980 ? (
 				<div className="nav-gutter">
 					<a href="/food" className="hover-div">
-						<span className="nav-link">
-							Food
-						</span>
+						<span className="nav-link">Food</span>
 						<Icon component={Meishi} className="nav-icon" />
 					</a>
 					<a href="/investment" className="hover-div">
-						<span className="nav-link">
-							Investment
-						</span>
+						<span className="nav-link">Investment</span>
 						<Icon component={Meigu} className="nav-icon" />
 					</a>
 					<a href="/career" className="hover-div">
-						<span className="nav-link">
-							Career
-						</span>
+						<span className="nav-link">Career</span>
 						<Icon component={Dushu} className="nav-icon" />
 					</a>
 					<a href="/outdoor" className="hover-div">
-						<span className="nav-link">
-							Outdoor
-						</span>
+						<span className="nav-link">Outdoor</span>
 						<Icon component={Huwai} className="nav-icon" />
 					</a>
 
 					<a href="/photography" className="hover-div">
-						<span className="nav-link">
-							Photography
-						</span>
+						<span className="nav-link">Photography</span>
 						<Icon component={Sheying} className="nav-icon" />
 					</a>
 
 					<a href="/talentShow" className="hover-div">
-						<span className="nav-link">
-							Talent Show
-						</span>
+						<span className="nav-link">Talent Show</span>
 						<Icon component={Caiyi} className="nav-icon" />
 					</a>
 				</div>
 			) : null}
 
-			{/* {user ? ( */}
-				<span>
-					<a href="/api/auth/logout" className="link">
-						Logout
-					</a>
-					<a href="/posting" className="link">
-						Post
-					</a>
-				</span>
-			{/* ) : ( */}
-				<span>
-					{/* <a href="/api/auth/signup" className="link">
-						注册
-					</a> */}
-					<a href="/api/auth/login" className="link">
-						Login / Signup
-					</a>
-				</span>
-			{/* )} */}
+			{user ? (
+			<span>
+				<Button onClick={handleLogout} className="link logout-btn">
+					Logout
+				</Button>
+				<a href="/posting" className="link">
+					Post
+				</a>
+			</span>
+			) : (
+			<span>
+				<a href="/signup" className="link">
+					Signup
+				</a>
+				<a href="/login" className="link">
+					Login
+				</a>
+			</span>
+			)}
 
 			{menuOpen ? <HeadMenu /> : null}
 		</Affix>
