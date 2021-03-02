@@ -2,7 +2,7 @@
  * @Author: Jinqi Li
  * @Date: 2021-02-04 14:27:33
  * @LastEditors: Jinqi Li
- * @LastEditTime: 2021-02-28 16:12:09
+ * @LastEditTime: 2021-03-01 22:14:37
  * @FilePath: /billow-website/pages/posting/index.js
  */
 import React, { useState, useEffect, useContext } from 'react';
@@ -18,17 +18,15 @@ import 'semantic-ui-css/semantic.min.css';
 import { useCurrentUser } from '../../hooks/index';
 
 export default function Posting() {
-	const [user] = useCurrentUser();
+	const [ user ] = useCurrentUser();
+	const [ selectedImage, setSelectedImage ] = useState();
+	const [ images, setImages ] = useState([]);
 
-  const [msg, setMsg] = useState(null);
+	const [ msg, setMsg ] = useState(null);
 
-  if (!user) {
-    return (
-      <div style={{ color: '#555', textAlign: 'center' }}>
-        Please sign in to post
-      </div>
-    );
-  }
+	if (!user) {
+		return <div style={{ color: '#555', textAlign: 'center' }}>Please sign in to post</div>;
+	}
 
 	const tagChildren = [
 		{ key: 'food', text: '美食', value: 'food' },
@@ -80,10 +78,10 @@ export default function Posting() {
 		let errs = validate();
 		setErrors(errs);
 		const body = {
-			content: e.currentTarget.content.value,
-		  };
-		  if (!e.currentTarget.content.value) return;
-		  e.currentTarget.content.value = '';
+			content: e.currentTarget.content.value
+		};
+		if (!e.currentTarget.content.value) return;
+		e.currentTarget.content.value = '';
 
 		let media = [];
 		const imgNewURL = images.filter((img) => !img.url);
@@ -92,7 +90,7 @@ export default function Posting() {
 
 		setForm({
 			...form,
-			images: [...imgOldURL, ...media],
+			images: [ ...imgOldURL, ...media ],
 			username: user.nickname,
 			userId: user._id
 		});
@@ -100,7 +98,7 @@ export default function Posting() {
 		if (res.ok) {
 			setMsg('Posted!');
 			setTimeout(() => setMsg(null), 5000);
-		  }
+		}
 
 		setIsSubmitting(true);
 	};

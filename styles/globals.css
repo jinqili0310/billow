@@ -447,9 +447,8 @@ a.menu-bottom-link {
     19% { opacity: 0 }
     100% { opacity: 0 }
 }
-.slider-div ::marker {
-	display: none;
-	content: "";
+.slider-div ul {
+	list-style: none;
 }
 
 /* homeArea.js */
