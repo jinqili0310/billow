@@ -2,7 +2,7 @@
  * @Author: Jinqi Li
  * @Date: 2021-03-02 22:30:22
  * @LastEditors: Jinqi Li
- * @LastEditTime: 2021-03-03 00:51:43
+ * @LastEditTime: 2021-03-03 02:33:02
  * @FilePath: /billow-website/pages/posting/index.js
  */
 import React, { useState, useEffect, useContext } from 'react';
@@ -18,6 +18,7 @@ import 'semantic-ui-css/semantic.min.css';
 import { imageUpload } from '../../utils/imageUpload';
 import { useCurrentUser } from '../../hooks/index';
 import 'react-quill/dist/quill.snow.css';
+import { message } from 'antd';
 
 const EmptyComponent = () => false;
 
@@ -101,16 +102,17 @@ export default function Posting() {
 	);
 	const createPost = async () => {
 		// try {
-			console.log(JSON.stringify(form));
-			const res = await fetch(`${server}/api/posts`, {
-				method: 'POST',
-				headers: {
-					'Accept': 'application/json',
-					'Content-Type': 'application/json'
-				},
-				body: JSON.stringify(form)
-			});
-			router.push('/');
+		console.log(JSON.stringify(form));
+		const res = await fetch(`${server}/api/posts`, {
+			method: 'POST',
+			headers: {
+				Accept: 'application/json',
+				'Content-Type': 'application/json'
+			},
+			body: JSON.stringify(form)
+		});
+		message.success('Post success!');
+		router.push('/');
 		// } catch (error) {
 		// 	console.log(error);
 		// }
@@ -206,23 +208,23 @@ export default function Posting() {
 			) : (
 				<Form onSubmit={handleSubmit} className="post-page">
 					<Form.Select
-						error={errors.tag ? { content: '请选择一个版块' } : null}
+						error={errors.tag ? { content: 'Please select a topic' } : null}
 						name="tag"
-						placeholder="请选择发布版块"
+						placeholder="Please select a topic"
 						onChange={handleTagChange}
 						options={tagChildren}
 					/>
 					<Form.Input
-						error={errors.title ? { content: '请输入标题' } : null}
+						error={errors.title ? { content: 'Please enter a title' } : null}
 						name="title"
 						onChange={handleChange}
-						placeholder="标题"
+						placeholder="Title"
 					/>
-					<Form.TextArea name="discription" onChange={handleChange} placeholder="内容简介" />
+					<Form.TextArea name="discription" onChange={handleChange} placeholder="Description" />
 					<Form.Field name="images" className="image-upload">
 						<div className="input-image">
 							<label for="upload-img">
-								<CloudUploadOutlined /> 上传图片
+								<CloudUploadOutlined /> Upload images
 							</label>
 							<input id="upload-img" type="file" onChange={handleUploadInput} multiple accept="image/*" />
 						</div>
@@ -246,7 +248,7 @@ export default function Posting() {
 							))}
 						</div>
 					</Form.Field>
-					<Form.Field name="content" error={errors.body ? { content: '请输入正文' } : null}>
+					<Form.Field name="content" error={errors.body ? { content: 'Please write something' } : null}>
 						<NextQuill
 							style={{ height: '500px' }}
 							modules={modules}
@@ -263,10 +265,10 @@ export default function Posting() {
 					/> */}
 					<Form.Group className="post-btn">
 						<Form.Button className="post-action" fluid type="submit">
-							发 布
+							Post
 						</Form.Button>
 						<Form.Button className="post-action" onClick={() => router.push('/')} fluid type="cancel">
-							取 消
+							Cancel
 						</Form.Button>
 					</Form.Group>
 				</Form>

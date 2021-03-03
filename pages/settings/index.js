@@ -2,13 +2,15 @@
  * @Author: Jinqi Li
  * @Date: 2021-02-28 16:52:37
  * @LastEditors: Jinqi Li
- * @LastEditTime: 2021-03-03 00:57:24
+ * @LastEditTime: 2021-03-03 02:47:17
  * @FilePath: /billow-website/pages/settings/index.js
  */
 import React, { useState, useEffect, useRef } from 'react';
+import 'antd/dist/antd.css';
 import Head from 'next/head';
 import { useCurrentUser } from '../../hooks/index';
 import PageHeader from '../../components/pageHeader';
+import { message } from 'antd';
 
 const ProfileSection = () => {
 	const [ user, { mutate } ] = useCurrentUser();
@@ -36,7 +38,7 @@ const ProfileSection = () => {
 		}
 		formData.append('username', nameRef.current.value);
 		formData.append('bio', bioRef.current.value);
-    	console.log(formData)
+		console.log(formData);
 		const res = await fetch('/api/user', {
 			method: 'PATCH',
 			body: formData
@@ -50,6 +52,7 @@ const ProfileSection = () => {
 				}
 			});
 			setMsg({ message: 'Profile updated' });
+			message.success('Profile updated!');
 		} else {
 			setMsg({ message: await res.text(), isError: true });
 		}
@@ -91,12 +94,12 @@ const ProfileSection = () => {
 
 	return (
 		<React.Fragment>
-			<PageHeader></PageHeader>
-			<section>
+			<PageHeader />
+			<section className="forget-password">
 				{msg.message ? (
 					<p style={{ color: msg.isError ? 'red' : '#1890ff', textAlign: 'center' }}>{msg.message}</p>
 				) : null}
-				<form onSubmit={handleSubmit}>
+				<form className="form-content" onSubmit={handleSubmit}>
 					{!user.emailVerified ? (
 						<p>
 							Your email has not been verified. {/* eslint-disable-next-line */}
@@ -108,6 +111,7 @@ const ProfileSection = () => {
 					<label htmlFor="username">
 						Name
 						<input
+							className="my-input"
 							required
 							id="username"
 							name="username"
@@ -118,11 +122,12 @@ const ProfileSection = () => {
 					</label>
 					<label htmlFor="bio">
 						Bio
-						<textarea id="bio" name="bio" type="text" placeholder="Bio" ref={bioRef} />
+						<textarea className="my-input" id="bio" name="bio" type="text" placeholder="Bio" ref={bioRef} />
 					</label>
 					<label htmlFor="avatar">
 						Profile picture
 						<input
+							className="my-input"
 							type="file"
 							id="avatar"
 							name="avatar"
@@ -130,20 +135,22 @@ const ProfileSection = () => {
 							ref={profilePictureRef}
 						/>
 					</label>
-					<button disabled={isUpdating} type="submit">
+					<button className="my-primary" disabled={isUpdating} type="submit">
 						Save
 					</button>
 				</form>
-				<form onSubmit={handleSubmitPasswordChange}>
+				<form className="form-content" onSubmit={handleSubmitPasswordChange}>
 					<label htmlFor="oldpassword">
 						Old Password
-						<input type="password" name="oldPassword" id="oldpassword" required />
+						<input className="my-input" type="password" name="oldPassword" id="oldpassword" required />
 					</label>
 					<label htmlFor="newpassword">
 						New Password
-						<input type="password" name="newPassword" id="newpassword" required />
+						<input className="my-input" type="password" name="newPassword" id="newpassword" required />
 					</label>
-					<button type="submit">Change Password</button>
+					<button className="my-primary" type="submit">
+						Change Password
+					</button>
 				</form>
 			</section>
 		</React.Fragment>

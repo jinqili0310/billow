@@ -2,15 +2,17 @@
  * @Author: Jinqi Li
  * @Date: 2021-02-28 13:30:48
  * @LastEditors: Jinqi Li
- * @LastEditTime: 2021-03-03 00:53:53
+ * @LastEditTime: 2021-03-03 02:38:55
  * @FilePath: /billow-website/pages/login/index.js
  */
 import React, { useState, useEffect } from 'react';
+import 'antd/dist/antd.css';
 import Head from 'next/head';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useCurrentUser } from '../../hooks/index';
 import PageHeader from '../../components/pageHeader';
+import { message } from 'antd';
 
 const LoginPage = () => {
 	const router = useRouter();
@@ -38,6 +40,7 @@ const LoginPage = () => {
 		if (res.status === 200) {
 			const userObj = await res.json();
 			mutate(userObj);
+			message.success('Login success!');
 		} else {
 			setErrorMsg('Incorrect username or password. Try again!');
 		}
@@ -45,21 +48,25 @@ const LoginPage = () => {
 
 	return (
 		<React.Fragment>
-			<PageHeader></PageHeader>
-			<h2>Sign in</h2>
-			<form onSubmit={onSubmit}>
-				{errorMsg ? <p style={{ color: 'red' }}>{errorMsg}</p> : null}
-				<label htmlFor="email">
-					<input id="email" type="email" name="email" placeholder="Email address" />
-				</label>
-				<label htmlFor="password">
-					<input id="password" type="password" name="password" placeholder="Password" />
-				</label>
-				<button type="submit">Sign in</button>
-				<Link href="/forgetpassword">
-					<a>Forget password</a>
-				</Link>
-			</form>
+			<PageHeader />
+			<div id="login">
+				<form onSubmit={onSubmit} className="form-content">
+					{errorMsg ? <p style={{ color: 'red' }}>{errorMsg}</p> : null}
+					<label htmlFor="email">
+						Email
+						<input className="my-input" id="email" type="email" name="email" placeholder="Email address" />
+					</label>
+					<label htmlFor="password">
+						Password
+						<input className="my-input" id="password" type="password" name="password" placeholder="Password" />
+					</label>
+					<button className="my-primary" type="submit">Sign in</button>
+					{"  "}
+					<Link href="/forgetpassword">
+						<a>Forget password</a>
+					</Link>
+				</form>
+			</div>
 		</React.Fragment>
 	);
 };

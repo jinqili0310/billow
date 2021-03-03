@@ -2,7 +2,7 @@
  * @Author: Jinqi Li
  * @Date: 2021-02-09 02:00:20
  * @LastEditors: Jinqi Li
- * @LastEditTime: 2021-02-26 01:24:16
+ * @LastEditTime: 2021-03-03 02:58:29
  * @FilePath: /billow-website/components/pageFooter.js
  */
 import React from 'react';
@@ -66,7 +66,7 @@ export default function PageFooter() {
 				<a href="/about">About Us</a>
 				<span>{' '}|{' '}</span>
 				<a href="#">Terms and Conditions</a>
-				<span className="footer-right">&copy;2021 Billow</span>
+				<span className="footer-right">&copy;2021 MicroBillow</span>
 			</div>
 		</div>
 	);
