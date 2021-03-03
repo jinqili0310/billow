@@ -2,7 +2,7 @@
  * @Author: Jinqi Li
  * @Date: 2021-02-04 01:12:07
  * @LastEditors: Jinqi Li
- * @LastEditTime: 2021-02-13 16:27:46
+ * @LastEditTime: 2021-03-02 23:37:27
  * @FilePath: /billow-website/pages/career/index.js
  */
 import React from 'react';
@@ -11,7 +11,6 @@ import 'antd/dist/antd.css';
 import PageHeader from '../../components/pageHeader';
 import AreaIntro from '../../components/areaIntro';
 import Dushu from '../../public/dushu.svg';
-import PostList from '../../components/postList';
 import fetch from 'isomorphic-unfetch';
 import { server } from '../../config';
 import { Card } from 'antd';

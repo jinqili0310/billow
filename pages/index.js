@@ -2,7 +2,7 @@
  * @Author: Jinqi Li
  * @Date: 1985-10-26 01:15:00
  * @LastEditors: Jinqi Li
- * @LastEditTime: 2021-02-28 16:20:04
+ * @LastEditTime: 2021-03-02 23:43:22
  * @FilePath: /billow-website/pages/index.js
  */
 import React, { useState, useContext, useEffect } from 'react';
@@ -17,10 +17,8 @@ import HomeArea from '../components/homeArea';
 import PageFooter from '../components/pageFooter';
 import { Row, Col, Card } from 'antd';
 import SizeContext from 'antd/lib/config-provider/SizeContext';
-import PostList from '../components/postList';
 import fetch from 'isomorphic-unfetch';
 import { server } from '../config';
-import Posts from '../components/posts';
 
 function useWindowSize() {
 	const [ windowSize, setWindowSize ] = useState({
@@ -58,7 +56,7 @@ const Home = ({ posts }) => {
 				<link rel="preload" href="/Futura-Condensed-Extra-Bold.otf" as="font" crossOrigin="" />
 			</Head>
 			<PageHeader />
-			<HomeCarousel></HomeCarousel>
+			<HomeCarousel />
 			<Button className="join-btn">JOIN US</Button>
 			{/* <div className="banner-div">
 				<Button className="join-btn">JOIN US</Button>
@@ -212,8 +210,7 @@ const Home = ({ posts }) => {
 				<div className="update-module">
 					<h2 className="area-title">UPDATES</h2>
 					<div className="fetch-post">
-						<Posts></Posts>
-						{/* {posts.map((post) => {
+						{posts.map((post) => {
 							return (
 								<div key={post._id}>
 									<a href={`../${post._id}`}>
@@ -223,7 +220,7 @@ const Home = ({ posts }) => {
 									</a>
 								</div>
 							);
-						})} */}
+						})}
 					</div>
 				</div>
 			</main>
@@ -232,6 +229,12 @@ const Home = ({ posts }) => {
 			</footer>
 		</React.Fragment>
 	);
+};
+
+Home.getInitialProps = async () => {
+	const res = await fetch(`${server}/api/posts`);
+	const { data } = await res.json();
+	return { posts: data };
 };
 
 export default Home;

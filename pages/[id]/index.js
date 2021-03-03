@@ -1,9 +1,9 @@
 /*
  * @Author: Jinqi Li
- * @Date: 2021-02-13 02:54:09
+ * @Date: 2021-03-02 19:54:17
  * @LastEditors: Jinqi Li
- * @LastEditTime: 2021-03-02 10:16:37
- * @FilePath: \billow\pages\[id]\index.js
+ * @LastEditTime: 2021-03-03 00:49:05
+ * @FilePath: /billow-website/pages/[id]/index.js
  */
 import React, { useState, useEffect } from 'react';
 import Head from 'next/head';
@@ -14,12 +14,11 @@ import 'antd/dist/antd.css';
 import { Card, Avatar, Comment, Tooltip, List, Input, Form, Button } from 'antd';
 import { ShareAltOutlined, EllipsisOutlined, CommentOutlined } from '@ant-design/icons';
 import PageHeader from '../../components/pageHeader';
-import Posts from '../../components/posts'
 
 const { Meta } = Card;
 const { TextArea } = Input;
 
-const Post = ({ post }) => {
+const PostId = ({ post }) => {
 	return (
 		<React.Fragment>
 			<Head>
@@ -28,8 +27,7 @@ const Post = ({ post }) => {
 			</Head>
 			<PageHeader />
 			<div className="post-content">
-				<Posts></Posts>
-				{/* <Card
+				<Card
 				// actions={[
 				// 	<CommentOutlined key="comment" />,
 				// 	<ShareAltOutlined key="share" />,
@@ -43,10 +41,17 @@ const Post = ({ post }) => {
 						return <img className="db-img" key={item.public_id} alt="billow" src={item.url} />;
 					})}
 					<div dangerouslySetInnerHTML={{ __html: post.body }} />
-				</Card> */}
+					<div dangerouslySetInnerHTML={{ __html: post.content }} />
+				</Card>
 			</div>
 		</React.Fragment>
 	);
 };
 
-export default Post;
+PostId.getInitialProps = async ({ query: { id } }) => {
+	const res = await fetch(`${server}/api/posts/${id}`);
+	const { data } = await res.json();
+	return { post: data };
+};
+
+export default PostId;

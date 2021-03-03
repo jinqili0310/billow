@@ -51,10 +51,6 @@ div.banner-div {
 	height: 500px;
 	text-align: center;
 	margin: 0 0 3% 0;
-	background-image: url('https://kikijinqili.github.io/assets/gradient-banner.gif');
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-position: center;
 	position: relative;
 }
 .banner-img {
@@ -107,9 +103,6 @@ div.banner-div {
 }
 .home-row-small {
 	padding: 0 12%;
-}
-.home-ant-card .ant-image-img {
-	/* opacity: 0.7; */
 }
 .home-ant-card .home-cards {
 	margin: 0 auto 5% auto;
@@ -187,7 +180,6 @@ span.hashtag:nth-child(even) {
 	top: 0 !important;
 	background-color: #fff;
 	z-index: 100 !important;
-	/* box-shadow: 0 2px 0.02px rgba(0, 0, 0, 0.1); */
 }
 .menu-icon {
 	font-size: 30px;
@@ -234,9 +226,6 @@ div.nav-gutter {
 .nav-icon {
 	text-align: center;
 	font-size: 40px !important;
-	/* position: absolute;
-	top: -45px;
-	left: 10px; */
 	opacity: 0.5;
 	padding-left: 2px;
 }
@@ -271,33 +260,9 @@ div.nav-gutter {
 	float: right;
 	font-size: 1.2rem;
 }
-/* .large-parent:nth-child(1) .ant-image-mask::after {
-	content: "Food";
-}
-.large-parent:nth-child(4) .ant-image-mask::after {
-	content: "Investment";
-}
-.large-parent:nth-child(5) .ant-image-mask::after {
-	content: "Career";
-}
-.large-parent:nth-child(8) .ant-image-mask::after {
-	content: "Outdoor";
-}
-.large-parent:nth-child(9) .ant-image-mask::after {
-	content: "Photography";
-}
-.large-parent:nth-child(12) .ant-image-mask::after {
-	content: "Talent Show";
-} */
 
 /* headMenu.js */
 div.head-menu {
-	/* display: grid;
-	grid-template-columns: 1fr;
-	grid-template-rows: 5fr 1fr;
-	grid-column-gap: 0px;
-	grid-row-gap: 0px; */
-	/* start */
 	display: grid;
 	grid-template-columns: 1fr;
 	grid-template-rows: 1fr;
@@ -335,10 +300,6 @@ div.menu-top {
 	color: #707070;
 	padding-bottom: 2px;
 }
-/* .menu-table a {
-	color: #707070;
-	font-weight: semibold;
-} */
 .menu-table .ant-table-tbody > tr > td {
 	border: none;
 }
@@ -358,10 +319,6 @@ a.menu-bottom-link {
 	font-size: 50px;
 	padding: 5px 5px 0 0;
 }
-/* #huwai {
-	font-size: 44px;
-	padding-left: 12px;
-} */
 
 /* homeCarousel.js */
 .slider-div {
@@ -511,11 +468,6 @@ h1.intro-title {
 }
 
 /* posts/1.js */
-div.post-content {
-	/* div.ant-card.ant-card-bordered:nth-child(2) {
-		margin: 10px auto 10px auto;
-	} */
-}
 .ant-card-meta-title {
 	white-space: normal !important;
 	overflow: visible !important;
@@ -635,7 +587,7 @@ div.footer-div {
 }
 div.post-btn {
 	text-align: center;
-	margin: 10px auto 20px auto !important;
+	margin: 50px auto 20px auto !important;
 }
 .post-action {
 	width: 45%;

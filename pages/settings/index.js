@@ -2,8 +2,8 @@
  * @Author: Jinqi Li
  * @Date: 2021-02-28 16:52:37
  * @LastEditors: Jinqi Li
- * @LastEditTime: 2021-03-02 14:25:51
- * @FilePath: \billow\pages\settings\index.js
+ * @LastEditTime: 2021-03-02 22:05:34
+ * @FilePath: /billow-website/pages/settings/index.js
  */
 import React, { useState, useEffect, useRef } from 'react';
 import Head from 'next/head';
@@ -35,7 +35,7 @@ const ProfileSection = () => {
 		}
 		formData.append('username', nameRef.current.value);
 		formData.append('bio', bioRef.current.value);
-    console.log(formData)
+    	console.log(formData)
 		const res = await fetch('/api/user', {
 			method: 'PATCH',
 			body: formData
@@ -96,7 +96,7 @@ const ProfileSection = () => {
 			<section>
 				<h2>Edit Profile</h2>
 				{msg.message ? (
-					<p style={{ color: msg.isError ? 'red' : '#0070f3', textAlign: 'center' }}>{msg.message}</p>
+					<p style={{ color: msg.isError ? 'red' : '#1890ff', textAlign: 'center' }}>{msg.message}</p>
 				) : null}
 				<form onSubmit={handleSubmit}>
 					{!user.emailVerified ? (
@@ -128,7 +128,7 @@ const ProfileSection = () => {
 							type="file"
 							id="avatar"
 							name="avatar"
-							accept="image/png, image/jpeg"
+							accept="image/png, image/jpeg, image/jpg"
 							ref={profilePictureRef}
 						/>
 					</label>
