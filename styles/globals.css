@@ -63,7 +63,7 @@ div.banner-div {
 	position: absolute !important;
 	color: #fff !important;
 	border: none !important;
-	top: 330px;
+	top: 400px;
 	font-size: 30px !important;
 	line-height: 40px !important;
 	height: 50px !important;
@@ -207,6 +207,12 @@ a.link {
 	float: right;
 	font-size: 1.2rem;
 }
+img.profile-img {
+	width: 30px;
+	height: 30px;
+	display: inline-block;
+	border-radius: 30px;
+}
 div.placeholder {
 	display: none;
 }
@@ -215,9 +221,10 @@ div.nav-gutter {
 	margin: 0;
 }
 .nav-link {
-	color: #000;
+	color: #fff;
 	font-weight: 500;
-	border: 1px solid rgba(0,0,0,.85);
+	background-color: #fabdd5;
+	border: 1px solid transparent;
 	border-radius: 16px;
 	padding: 5px;
 	font-size: 16px;
@@ -235,7 +242,8 @@ div.nav-gutter {
 	text-align: center;
 }
 .hover-div:hover > .nav-link {
-	color: #707070;
+	color: #fabdd5;
+	background-color: #fff;
 }
 .hover-div:hover > .nav-icon {
 	opacity: 1;

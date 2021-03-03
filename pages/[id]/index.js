@@ -2,7 +2,7 @@
  * @Author: Jinqi Li
  * @Date: 2021-03-02 19:54:17
  * @LastEditors: Jinqi Li
- * @LastEditTime: 2021-03-03 00:49:05
+ * @LastEditTime: 2021-03-03 01:19:40
  * @FilePath: /billow-website/pages/[id]/index.js
  */
 import React, { useState, useEffect } from 'react';
@@ -21,10 +21,6 @@ const { TextArea } = Input;
 const PostId = ({ post }) => {
 	return (
 		<React.Fragment>
-			<Head>
-				<title>Billow</title>
-				<link rel="icon" href="/logo.ico" />
-			</Head>
 			<PageHeader />
 			<div className="post-content">
 				<Card
@@ -40,8 +36,11 @@ const PostId = ({ post }) => {
 					{post.images.map((item) => {
 						return <img className="db-img" key={item.public_id} alt="billow" src={item.url} />;
 					})}
-					<div dangerouslySetInnerHTML={{ __html: post.body }} />
-					<div dangerouslySetInnerHTML={{ __html: post.content }} />
+					{post.body ? (
+						<div dangerouslySetInnerHTML={{ __html: post.body }} />
+					) : (
+						<div dangerouslySetInnerHTML={{ __html: post.content }} />
+					)}
 				</Card>
 			</div>
 		</React.Fragment>

@@ -19,10 +19,6 @@ import { Card } from 'antd';
 const Investment = ({ posts }) => {
 	return (
 		<React.Fragment>
-			<Head>
-				<title>Billow</title>
-				<link rel="icon" href="/logo.ico" />
-			</Head>
 			<PageHeader />
 			<AreaIntro icon={Meigu} title="美股" />
 

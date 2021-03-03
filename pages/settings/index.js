@@ -2,12 +2,13 @@
  * @Author: Jinqi Li
  * @Date: 2021-02-28 16:52:37
  * @LastEditors: Jinqi Li
- * @LastEditTime: 2021-03-02 22:05:34
+ * @LastEditTime: 2021-03-03 00:57:24
  * @FilePath: /billow-website/pages/settings/index.js
  */
 import React, { useState, useEffect, useRef } from 'react';
 import Head from 'next/head';
 import { useCurrentUser } from '../../hooks/index';
+import PageHeader from '../../components/pageHeader';
 
 const ProfileSection = () => {
 	const [ user, { mutate } ] = useCurrentUser();
@@ -90,11 +91,8 @@ const ProfileSection = () => {
 
 	return (
 		<React.Fragment>
-			<Head>
-				<title>Settings</title>
-			</Head>
+			<PageHeader></PageHeader>
 			<section>
-				<h2>Edit Profile</h2>
 				{msg.message ? (
 					<p style={{ color: msg.isError ? 'red' : '#1890ff', textAlign: 'center' }}>{msg.message}</p>
 				) : null}
@@ -160,7 +158,6 @@ const SettingPage = () => {
 	}
 	return (
 		<React.Fragment>
-			<h1>Settings</h1>
 			<ProfileSection />
 		</React.Fragment>
 	);

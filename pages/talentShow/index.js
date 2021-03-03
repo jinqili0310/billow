@@ -2,7 +2,7 @@
  * @Author: Jinqi Li
  * @Date: 2021-02-04 15:17:58
  * @LastEditors: Jinqi Li
- * @LastEditTime: 2021-02-13 11:16:00
+ * @LastEditTime: 2021-03-03 00:54:43
  * @FilePath: /billow-website/pages/talentShow/index.js
  */
 import React from 'react';
@@ -18,10 +18,6 @@ import { Card } from 'antd';
 const TalentShow =({posts}) => {
 	return (
 		<React.Fragment>
-			<Head>
-				<title>Billow</title>
-				<link rel="icon" href="/logo.ico" />
-			</Head>
 			<PageHeader />
 			<AreaIntro icon={Caiyi} title="戏精才艺展示" />
 			

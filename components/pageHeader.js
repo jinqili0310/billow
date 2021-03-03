@@ -2,7 +2,7 @@
  * @Author: Jinqi Li
  * @Date: 2021-02-03 21:50:21
  * @LastEditors: Jinqi Li
- * @LastEditTime: 2021-02-28 17:37:46
+ * @LastEditTime: 2021-03-03 01:29:51
  * @FilePath: /billow-website/components/pageHeader.js
  */
 import React, { useState, useEffect } from 'react';
@@ -114,23 +114,26 @@ function PageHeader() {
 			) : null}
 
 			{user ? (
-			<span>
-				<Button onClick={handleLogout} className="link logout-btn">
-					Logout
-				</Button>
-				<a href="/posting" className="link">
-					Post
-				</a>
-			</span>
+				<span>
+					<Button onClick={handleLogout} className="link logout-btn">
+						Logout
+					</Button>
+					<a href="/posting" className="link">
+						Post
+					</a>
+					<a href="/settings" className="link">
+						{user.profilePicture ? <img className="profile-img" src={user.profilePicture} /> : <span>Profile</span>}
+					</a>
+				</span>
 			) : (
-			<span>
-				<a href="/signup" className="link">
-					Signup
-				</a>
-				<a href="/login" className="link">
-					Login
-				</a>
-			</span>
+				<span>
+					<a href="/signup" className="link">
+						Signup
+					</a>
+					<a href="/login" className="link">
+						Login
+					</a>
+				</span>
 			)}
 
 			{menuOpen ? <HeadMenu /> : null}

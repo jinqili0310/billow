@@ -2,12 +2,13 @@
  * @Author: Jinqi Li
  * @Date: 1985-10-26 01:15:00
  * @LastEditors: Jinqi Li
- * @LastEditTime: 2021-03-02 23:43:22
+ * @LastEditTime: 2021-03-03 01:22:23
  * @FilePath: /billow-website/pages/index.js
  */
 import React, { useState, useContext, useEffect } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import 'antd/dist/antd.css';
 import { Avatar, Image, Button } from 'antd';
 import styles from '../styles/Home.module.css';
@@ -47,17 +48,21 @@ function useWindowSize() {
 
 const Home = ({ posts }) => {
 	const size = useWindowSize();
+	const router = useRouter();
 
 	return (
 		<React.Fragment>
-			<Head>
-				<title>Billow</title>
-				<link rel="icon" href="/logo.ico" />
-				<link rel="preload" href="/Futura-Condensed-Extra-Bold.otf" as="font" crossOrigin="" />
-			</Head>
 			<PageHeader />
 			<HomeCarousel />
-			<Button className="join-btn">JOIN US</Button>
+			<Button
+				className="join-btn"
+				onClick={(e) => {
+					e.preventDefault();
+					window.location.href = '/signup';
+				}}
+			>
+				JOIN US
+			</Button>
 			{/* <div className="banner-div">
 				<Button className="join-btn">JOIN US</Button>
 			</div> */}

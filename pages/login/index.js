@@ -2,7 +2,7 @@
  * @Author: Jinqi Li
  * @Date: 2021-02-28 13:30:48
  * @LastEditors: Jinqi Li
- * @LastEditTime: 2021-02-28 16:21:36
+ * @LastEditTime: 2021-03-03 00:53:53
  * @FilePath: /billow-website/pages/login/index.js
  */
 import React, { useState, useEffect } from 'react';
@@ -10,6 +10,7 @@ import Head from 'next/head';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useCurrentUser } from '../../hooks/index';
+import PageHeader from '../../components/pageHeader';
 
 const LoginPage = () => {
 	const router = useRouter();
@@ -44,9 +45,7 @@ const LoginPage = () => {
 
 	return (
 		<React.Fragment>
-			<Head>
-				<title>Sign in</title>
-			</Head>
+			<PageHeader></PageHeader>
 			<h2>Sign in</h2>
 			<form onSubmit={onSubmit}>
 				{errorMsg ? <p style={{ color: 'red' }}>{errorMsg}</p> : null}

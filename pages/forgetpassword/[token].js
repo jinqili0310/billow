@@ -1,3 +1,5 @@
+import PageHeader from "../../components/pageHeader";
+
 /*
  * @Author: Jinqi Li
  * @Date: 2021-02-28 14:30:47
@@ -16,9 +18,7 @@ const ResetPasswordTokenPage = ({ valid, token }) => {
   
     return (
       <Layout>
-        <Head>
-          <title>Forget password</title>
-        </Head>
+        <PageHeader></PageHeader>
         <h2>Forget password</h2>
         {valid ? (
           <>

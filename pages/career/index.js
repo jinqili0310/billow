@@ -18,10 +18,6 @@ import { Card } from 'antd';
 const Career = ({ posts }) => {
 	return (
 		<React.Fragment>
-			<Head>
-				<title>Billow</title>
-				<link rel="icon" href="/logo.ico" />
-			</Head>
 			<PageHeader />
 			<AreaIntro icon={Dushu} title="读书/职场" />
 

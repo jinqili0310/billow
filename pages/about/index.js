@@ -13,10 +13,6 @@ import Head from 'next/head';
 export default function About() {
 	return (
 		<React.Fragment>
-			<Head>
-				<title>Billow</title>
-				<link rel="icon" href="/logo.ico" />
-			</Head>
 			<PageHeader />
 			<div className="about-div">
 				<div className="about-first">

@@ -9,6 +9,7 @@ import React, { useState, useEffect } from 'react';
 import Head from 'next/head';
 import Router from 'next/router';
 import { useCurrentUser } from '../../hooks/index';
+import PageHeader from '../../components/pageHeader';
 
 const SignupPage = () => {
 	const [ user, { mutate } ] = useCurrentUser();
@@ -43,9 +44,7 @@ const SignupPage = () => {
 
 	return (
 		<React.Fragment>
-			<Head>
-				<title>Sign up</title>
-			</Head>
+			<PageHeader></PageHeader>
 			<div>
 				<h2>Sign up</h2>
 				<form onSubmit={handleSubmit}>

@@ -2,7 +2,7 @@
  * @Author: Jinqi Li
  * @Date: 2021-03-02 22:30:22
  * @LastEditors: Jinqi Li
- * @LastEditTime: 2021-03-03 00:37:13
+ * @LastEditTime: 2021-03-03 00:51:43
  * @FilePath: /billow-website/pages/posting/index.js
  */
 import React, { useState, useEffect, useContext } from 'react';
@@ -200,10 +200,6 @@ export default function Posting() {
 
 	return (
 		<React.Fragment>
-			<Head>
-				<title>Billow</title>
-				<link rel="icon" href="/logo.ico" />
-			</Head>
 			<PageHeader />
 			{isSubmitting ? (
 				<Loader active inline="centered" />

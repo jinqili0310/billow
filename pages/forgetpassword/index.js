@@ -2,13 +2,14 @@
 * @Author: Jinqi Li
 * @Date: 2021-02-28 14:27:24
  * @LastEditors: Jinqi Li
- * @LastEditTime: 2021-02-28 16:23:32
+ * @LastEditTime: 2021-03-03 00:53:34
  * @FilePath: /billow-website/pages/forgetpassword/index.js
 */
 import React, {useState} from 'react';
 import Head from 'next/head';
 import { Button } from "antd";
 import 'antd/dist/antd.css'
+import PageHeader from '../../components/pageHeader';
 
 const ForgetPasswordPage = () => {
     const [msg, setMsg] = useState({ message: '', isError: false });
@@ -35,9 +36,7 @@ const ForgetPasswordPage = () => {
 
     return (
       <React.Fragment>
-        <Head>
-          <title>Forget password</title>
-        </Head>
+        <PageHeader></PageHeader>
         <h2>Forget password</h2>
       {msg.message ? <p style={{ color: msg.isError ? 'red' : '#0070f3', textAlign: 'center' }}>{msg.message}</p> : null}
       <form onSubmit={handleSubmit}>
