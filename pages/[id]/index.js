@@ -2,8 +2,8 @@
  * @Author: Jinqi Li
  * @Date: 2021-02-13 02:54:09
  * @LastEditors: Jinqi Li
- * @LastEditTime: 2021-02-28 16:17:45
- * @FilePath: /billow-website/pages/[id]/index.js
+ * @LastEditTime: 2021-03-02 10:16:37
+ * @FilePath: \billow\pages\[id]\index.js
  */
 import React, { useState, useEffect } from 'react';
 import Head from 'next/head';

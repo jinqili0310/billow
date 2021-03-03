@@ -2,8 +2,8 @@
  * @Author: Jinqi Li
  * @Date: 2021-02-03 22:18:56
  * @LastEditors: Jinqi Li
- * @LastEditTime: 2021-02-28 13:14:50
- * @FilePath: /billow-website/next.config.js
+ * @LastEditTime: 2021-03-02 10:20:39
+ * @FilePath: \billow\next.config.js
  */
 require('dotenv').config();
 
@@ -46,7 +46,7 @@ module.exports = {
 	},
 
 	env: {
-		MONGODB_URI: process.env.MONGODB_URI,
+		MONGO_URI: process.env.MONGO_URI,
 		CLOUDINARY_URL: process.env.CLOUDINARY_URL,
 		DB_NAME: process.env.DB_NAME,
 		WEB_URI: process.env.WEB_URI,

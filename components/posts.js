@@ -2,8 +2,8 @@
  * @Author: Jinqi Li
  * @Date: 2021-02-28 16:07:45
  * @LastEditors: Jinqi Li
- * @LastEditTime: 2021-02-28 17:37:14
- * @FilePath: /billow-website/components/posts.js
+ * @LastEditTime: 2021-03-02 10:31:33
+ * @FilePath: \billow\components\posts.js
  */
 import React from 'react';
 import { useSWRInfinite } from 'swr';
@@ -11,28 +11,14 @@ import Link from 'next/link';
 import { useUser } from '../hooks/index';
 import fetcher from '../lib/fetch';
 import { defaultProfilePicture } from '../lib/default';
-import {Card} from 'antd'
+import {Button, Card} from 'antd'
 
 function Post({ post }) {
+  
   const user = useUser(post.creatorId);
+  
   return (
     <React.Fragment>
-      <style jsx>
-        {/* {`
-          div {
-            box-shadow: 0 5px 10px rgba(0,0,0,0.12);
-            padding: 1.5rem;
-            margin-bottom: 0.5rem;
-            transition: box-shadow 0.2s ease 0s;
-          }
-          div:hover {
-            box-shadow: 0 8px 30px rgba(0,0,0,0.12);
-          }
-          small {
-            color: #777;
-          }
-        `} */}
-      </style>
       <div>
         {user && (
           <Link href={`/user/${user._id}`}>
@@ -101,17 +87,13 @@ export default function Posts({ creatorId }) {
     <div>
       {posts.map((post) => <Post key={post._id} post={post} />)}
       {!isReachingEnd && (
-      <button
-        type="button"
-        style={{
-          background: 'transparent',
-          color: '#000',
-        }}
+      <Button
+        shape="round"
         onClick={() => setSize(size + 1)}
         disabled={isReachingEnd || isLoadingMore}
       >
         {isLoadingMore ? '. . .' : 'load more'}
-      </button>
+      </Button>
       )}
     </div>
   );
