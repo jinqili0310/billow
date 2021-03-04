@@ -2,8 +2,8 @@
  * @Author: Jinqi Li
  * @Date: 2021-02-28 13:20:58
  * @LastEditors: Jinqi Li
- * @LastEditTime: 2021-03-01 22:05:17
- * @FilePath: /billow-website/pages/api/user/index.js
+ * @LastEditTime: 2021-03-04 13:33:03
+ * @FilePath: \billow\pages\api\user\index.js
  */
 import nc from 'next-connect';
 import multer from 'multer';

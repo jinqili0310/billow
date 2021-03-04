@@ -2,8 +2,8 @@
  * @Author: Jinqi Li
  * @Date: 2021-03-02 22:42:54
  * @LastEditors: Jinqi Li
- * @LastEditTime: 2021-03-02 22:58:25
- * @FilePath: /billow-website/models/Post.js
+ * @LastEditTime: 2021-03-04 10:42:36
+ * @FilePath: \billow\models\Post.js
  */
 const mongoose = require('mongoose');
 
@@ -19,16 +19,14 @@ const PostSchema = new mongoose.Schema(
 		},
 		title: {
 			type: String,
-			required: [ true, '请输入标题' ],
-			maxlength: [ 40, '请输入最多40个字符' ]
+			required: true
 		},
 		tag: {
 			type: String,
-			required: [ true, '请选择发布版块' ]
+			required: true
 		},
 		description: {
-			type: String,
-			maxlength: [ 100, '请输入最多100个字符' ]
+			type: String
 		},
 		images: {
 			type: Array
@@ -36,9 +34,12 @@ const PostSchema = new mongoose.Schema(
 		body: {
 			type: String
 		},
-        content: {
-            type: String,
-			required: [ true, '请输入正文' ]
+		content: {
+			type: String,
+			required: true
+		},
+		comments: {
+			type: Array
 		}
 	},
 	{

@@ -2,8 +2,8 @@
  * @Author: Jinqi Li
  * @Date: 2021-03-02 19:54:17
  * @LastEditors: Jinqi Li
- * @LastEditTime: 2021-03-03 01:19:40
- * @FilePath: /billow-website/pages/[id]/index.js
+ * @LastEditTime: 2021-03-04 08:44:53
+ * @FilePath: \billow\pages\[id]\index.js
  */
 import React, { useState, useEffect } from 'react';
 import Head from 'next/head';
@@ -14,6 +14,7 @@ import 'antd/dist/antd.css';
 import { Card, Avatar, Comment, Tooltip, List, Input, Form, Button } from 'antd';
 import { ShareAltOutlined, EllipsisOutlined, CommentOutlined } from '@ant-design/icons';
 import PageHeader from '../../components/pageHeader';
+import Comments from '../../components/comments';
 
 const { Meta } = Card;
 const { TextArea } = Input;
@@ -41,6 +42,9 @@ const PostId = ({ post }) => {
 					) : (
 						<div dangerouslySetInnerHTML={{ __html: post.content }} />
 					)}
+				</Card>
+				<Card>
+					<Comments post={post}></Comments>
 				</Card>
 			</div>
 		</React.Fragment>
