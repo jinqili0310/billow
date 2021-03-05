@@ -2,8 +2,8 @@
  * @Author: Jinqi Li
  * @Date: 2021-02-28 16:52:37
  * @LastEditors: Jinqi Li
- * @LastEditTime: 2021-03-03 02:47:17
- * @FilePath: /billow-website/pages/settings/index.js
+ * @LastEditTime: 2021-03-04 16:24:36
+ * @FilePath: \billow\pages\settings\index.js
  */
 import React, { useState, useEffect, useRef } from 'react';
 import 'antd/dist/antd.css';
@@ -100,14 +100,13 @@ const ProfileSection = () => {
 					<p style={{ color: msg.isError ? 'red' : '#1890ff', textAlign: 'center' }}>{msg.message}</p>
 				) : null}
 				<form className="form-content" onSubmit={handleSubmit}>
-					{!user.emailVerified ? (
-						<p>
-							Your email has not been verified. {/* eslint-disable-next-line */}
-							<a role="button" onClick={sendVerificationEmail}>
-								Send verification email
-							</a>
-						</p>
-					) : null}
+					{!user.emailVerified ? null : // <p>
+					// 	Your email has not been verified. {/* eslint-disable-next-line */}
+					// 	<a role="button" onClick={sendVerificationEmail}>
+					// 		Send verification email
+					// 	</a>
+					// </p>
+					null}
 					<label htmlFor="username">
 						Name
 						<input

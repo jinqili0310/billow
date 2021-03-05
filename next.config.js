@@ -2,13 +2,18 @@
  * @Author: Jinqi Li
  * @Date: 2021-02-03 22:18:56
  * @LastEditors: Jinqi Li
- * @LastEditTime: 2021-03-02 10:20:39
+ * @LastEditTime: 2021-03-04 16:54:48
  * @FilePath: \billow\next.config.js
  */
 require('dotenv').config();
 
 module.exports = {
 	webpack: (config, { dev }) => {
+		config.node = {
+			fs: 'empty',
+			net: 'empty',
+			tls: 'empty'
+		};
 		config.module.rules.push(
 			{
 				test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,

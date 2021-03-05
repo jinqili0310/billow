@@ -2,8 +2,8 @@
  * @Author: Jinqi Li
  * @Date: 2021-02-28 13:28:37
  * @LastEditors: Jinqi Li
- * @LastEditTime: 2021-03-03 02:27:43
- * @FilePath: /billow-website/pages/signup/index.js
+ * @LastEditTime: 2021-03-04 16:46:03
+ * @FilePath: \billow\pages\signup\index.js
  */
 import React, { useState, useEffect } from 'react';
 import 'antd/dist/antd.css';
@@ -12,6 +12,12 @@ import Router from 'next/router';
 import { useCurrentUser } from '../../hooks/index';
 import PageHeader from '../../components/pageHeader';
 import { Steps, Button, message } from 'antd';
+import Nexmo from 'nexmo';
+
+const nexmo = new Nexmo({
+	apiKey: process.env.NEXMO_API_KEY,
+	apiSecret: process.env.NEXMO_API_SECRET
+});
 
 const { Step } = Steps;
 
@@ -29,8 +35,8 @@ const SignupPage = () => {
 	const returnPhone = `
 				<div class="phone-div">
 					<span>Phone number</span>
-					<input class="my-input" />
-					<button class="my-primary">Validate</button>
+					<input class="my-input" onChange="handlePhone" />
+					<button class="my-primary" onClick="handleValidate">Validate</button>
 				</div>
 				<div class="phone-div">
 					<span>Validate code</span>
@@ -80,6 +86,28 @@ const SignupPage = () => {
 			content: 'Terms of Use'
 		}
 	];
+
+	const handlePhone = (e) =>{
+		console.log(e.target.value)
+	}
+
+	const handleRequest = async () => {
+		// try {
+		console.log();
+		const res = await fetch(`${server}/api/posts`, {
+			method: 'POST',
+			headers: {
+				Accept: 'application/json',
+				'Content-Type': 'application/json'
+			},
+			body: JSON.stringify(form)
+		});
+		message.success('Post success!');
+		router.push('/');
+		// } catch (error) {
+		// 	console.log(error);
+		// }
+	};
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
